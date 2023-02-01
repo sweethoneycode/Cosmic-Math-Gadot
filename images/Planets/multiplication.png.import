@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/multiplication.png-bb05f0018ef09cfbc085e07fb0f6ef4d.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://images/Planets/multiplication.png"
+dest_files=[ "res://.import/multiplication.png-bb05f0018ef09cfbc085e07fb0f6ef4d.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

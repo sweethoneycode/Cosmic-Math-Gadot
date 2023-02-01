@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Incorrect.mp3-ed2963586e6ee3ed8897d31728f985a5.mp3str"
+
+[deps]
+
+source_file="res://SFX/Incorrect.mp3"
+dest_files=[ "res://.import/Incorrect.mp3-ed2963586e6ee3ed8897d31728f985a5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
