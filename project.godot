@@ -8,11 +8,25 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "AnswerBox",
+"language": "GDScript",
+"path": "res://AnswerBox.gd"
+} ]
+_global_script_class_icons={
+"AnswerBox": ""
+}
+
 [application]
 
 config/name="Cosmic-Math-Gadot"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Signals="*res://Signals.gd"
 
 [display]
 
