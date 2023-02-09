@@ -1,15 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://images/GameUI/planet_01.png" type="Texture" id=1]
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://MathStage.gd" type="Script" id=3]
-[ext_resource path="res://images/GameUI/answerBox.png" type="Texture" id=4]
+[ext_resource path="res://AnswerBox.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 168
+size = 100
+outline_color = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
 font_data = ExtResource( 2 )
-
-[sub_resource type="ImageTexture" id=2]
 
 [node name="MathStage" type="Node2D"]
 script = ExtResource( 3 )
@@ -56,21 +55,11 @@ custom_fonts/font = SubResource( 1 )
 text = "00"
 align = 1
 
-[node name="AnswerBox" type="Node2D" parent="."]
+[node name="AnswerBox" parent="." instance=ExtResource( 4 )]
+position = Vector2( 513, 844 )
 
-[node name="Button" type="Button" parent="AnswerBox"]
-margin_left = 501.0
-margin_top = 761.0
-margin_right = 761.0
-margin_bottom = 1070.0
-focus_mode = 0
-shortcut_in_tooltip = false
-enabled_focus_mode = 0
-icon = SubResource( 2 )
-flat = true
+[node name="AnswerBox2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 761, 848 )
 
-[node name="AnswerBox" type="Sprite" parent="AnswerBox/Button"]
-position = Vector2( 91, 165 )
-texture = ExtResource( 4 )
-
-[connection signal="pressed" from="AnswerBox/Button" to="." method="_on_Button_pressed"]
+[node name="AnswerBox3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1015, 850 )
