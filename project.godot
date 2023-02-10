@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "AnswerBox",
 "language": "GDScript",
-"path": "res://AnswerBox.gd"
+"path": "res://Scenes/Math Stage/AnswerBox.gd"
 } ]
 _global_script_class_icons={
 "AnswerBox": ""

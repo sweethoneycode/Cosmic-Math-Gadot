@@ -28,7 +28,9 @@ func _ready():
 
 	symbolTxt.text = str(mathType)
 	addend1Txt.text = str(Addend1num)
-	Signals.emit_signal("get_answers", Addend1num, Addend2[0])
+	
+# warning-ignore:return_value_discarded
+	Signals.connect("next_question", self, "nextAddend")
 
 
 func setDivideNum():
@@ -52,6 +54,7 @@ func setDivideNum():
 	Addend2.shuffle()
 	Addend2num = Addend2[0]
 	addend2Txt.text = str(Addend2[0])
+	Signals.emit_signal("get_answers", Addend1num, Addend2num)
 	
 func setSecondNum():
 	
@@ -72,14 +75,17 @@ func setSecondNum():
 	
 		
 	Addend2.shuffle()
-	print(Addend2)
+	#print(Addend2)
 	addend2Txt.text = str(Addend2[0])
-	
+	Addend2num = Addend2[0]
+	Signals.emit_signal("get_answers", Addend1num, Addend2num)
 
 func nextAddend():
 		var index = Addend2.find(str2var(addend2Txt.text), 0) 
 		if (index + 1 < Addend2.size()):
 			addend2Txt.text = str(Addend2[index + 1])
+			Signals.emit_signal("get_answers", Addend1num, Addend2[index +1])
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
