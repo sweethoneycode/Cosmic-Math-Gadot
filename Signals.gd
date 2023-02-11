@@ -2,7 +2,11 @@ extends Node
 
 signal get_answers(addend1, addend2)
 signal next_question()
+
 signal check_answer(answer)
+signal set_answer(answer)
+signal show_answer()
+
 #signal on_score_increment(amount)
 #signal start_game()
 #signal end_game()

@@ -25,6 +25,8 @@ func _get_answers(addend1:int, addend2: int):
 	answers.clear()
 
 	answer = addend2 + addend1
+	
+	
 	answers.append(answer)
 	
 	for _i in range(2):
@@ -40,6 +42,7 @@ func _get_answers(addend1:int, addend2: int):
 
 
 func displayAnswers():
+
 		answerbox1.text = str(answers[0])
 		answerbox2.text = str(answers[1])
 		answerbox3.text = str(answers[2])

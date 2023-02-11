@@ -3,6 +3,7 @@ extends Node2D
 onready var symbolTxt := $"%Symbol"
 onready var addend1Txt := $"%Num1"
 onready var addend2Txt := $"%Num2"
+onready var answerTxt := $"%AnswerNum"
 
 var Addend2 = []
 
@@ -31,6 +32,7 @@ func _ready():
 	
 # warning-ignore:return_value_discarded
 	Signals.connect("next_question", self, "nextAddend")
+	
 
 
 func setDivideNum():
@@ -55,6 +57,7 @@ func setDivideNum():
 	Addend2num = Addend2[0]
 	addend2Txt.text = str(Addend2[0])
 	Signals.emit_signal("get_answers", Addend1num, Addend2num)
+	Signals.connect("set_answer", self, "set_Answer")
 	
 func setSecondNum():
 	
@@ -78,7 +81,13 @@ func setSecondNum():
 	#print(Addend2)
 	addend2Txt.text = str(Addend2[0])
 	Addend2num = Addend2[0]
+	Signals.connect("set_answer", self, "set_Answer")
 	Signals.emit_signal("get_answers", Addend1num, Addend2num)
+	
+
+func set_Answer(answer:int):
+	print("Set Answer")
+	answerTxt.text = str(answer)
 
 func nextAddend():
 		var index = Addend2.find(str2var(addend2Txt.text), 0) 
