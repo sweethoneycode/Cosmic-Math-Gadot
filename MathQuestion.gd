@@ -6,9 +6,11 @@ onready var addend2Txt := $"%Num2"
 onready var answerTxt := $"%AnswerNum"
 
 var Addend2 = []
+var answer = 0
 
 var minNum = 0
 var maxNum = 0
+
 export var Addend1num: int = 0
 var Addend2num: int = 0
 export var mathType = "+"
@@ -30,8 +32,10 @@ func _ready():
 	symbolTxt.text = str(mathType)
 	addend1Txt.text = str(Addend1num)
 	
+	Signals.connect("check_answer", self, "_check_answer")
+	Signals.connect("set_answer", self, "set_Answer")
 # warning-ignore:return_value_discarded
-	Signals.connect("next_question", self, "nextAddend")
+	#Signals.connect("next_question", self, "nextAddend")
 	
 
 
@@ -56,8 +60,6 @@ func setDivideNum():
 	Addend2.shuffle()
 	Addend2num = Addend2[0]
 	addend2Txt.text = str(Addend2[0])
-	Signals.emit_signal("get_answers", Addend1num, Addend2num)
-	Signals.connect("set_answer", self, "set_Answer")
 	
 func setSecondNum():
 	
@@ -71,7 +73,6 @@ func setSecondNum():
 	for _i in range(10):
 		number = Addend1num
 		while Addend2.has(number):
-			
 			number = random.randi_range(minNum, maxNum)
 
 		Addend2.append(number)
@@ -81,20 +82,30 @@ func setSecondNum():
 	#print(Addend2)
 	addend2Txt.text = str(Addend2[0])
 	Addend2num = Addend2[0]
-	Signals.connect("set_answer", self, "set_Answer")
-	Signals.emit_signal("get_answers", Addend1num, Addend2num)
-	
+	get_answer(Addend2num)
 
+func get_answer(addend2:int):
+	answer = addend2 + Addend1num
+	set_Answer(answer)
+	
 func set_Answer(answer:int):
-	print("Set Answer")
+
 	answerTxt.text = str(answer)
+	Signals.emit_signal("get_answers", answer)
+	
+func _check_answer(check_answer:int):
+	if(check_answer == answer):
+		print("Correct!")
+	else:
+		print("Incorrect!")
+	nextAddend()
 
 func nextAddend():
-		var index = Addend2.find(str2var(addend2Txt.text), 0) 
+		var index = Addend2.find(Addend2num, 0) 
 		if (index + 1 < Addend2.size()):
 			addend2Txt.text = str(Addend2[index + 1])
-			Signals.emit_signal("get_answers", Addend1num, Addend2[index +1])
-		
+			Addend2num = Addend2[index +1]
+			get_answer(Addend2num)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
