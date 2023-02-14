@@ -17,3 +17,4 @@ texture = ExtResource( 1 )
 position = Vector2( 550, 837 )
 
 [node name="MathQuestion" parent="." instance=ExtResource( 2 )]
+mathType = "-"

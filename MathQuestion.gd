@@ -30,7 +30,7 @@ func _ready():
 		
 
 	symbolTxt.text = str(mathType)
-	addend1Txt.text = str(Addend1num)
+	#addend1Txt.text = str(Addend1num)
 	
 	Signals.connect("check_answer", self, "_check_answer")
 	Signals.connect("set_answer", self, "set_Answer")
@@ -59,7 +59,9 @@ func setDivideNum():
 	
 	Addend2.shuffle()
 	Addend2num = Addend2[0]
-	addend2Txt.text = str(Addend2[0])
+	
+	set_Question()
+	get_answer(Addend2num)
 	
 func setSecondNum():
 	
@@ -74,20 +76,50 @@ func setSecondNum():
 		number = Addend1num
 		while Addend2.has(number):
 			number = random.randi_range(minNum, maxNum)
-
 		Addend2.append(number)
 	
 		
 	Addend2.shuffle()
 	#print(Addend2)
-	addend2Txt.text = str(Addend2[0])
+	#addend2Txt.text = str(Addend2[0])
 	Addend2num = Addend2[0]
+	set_Question()
 	get_answer(Addend2num)
 
 func get_answer(addend2:int):
-	answer = addend2 + Addend1num
-	set_Answer(answer)
 	
+	match mathType:
+		"+":
+			answer = addend2 + Addend1num
+		"-":
+			if(Addend1num > addend2):
+				answer = Addend1num - addend2
+			else:
+				answer = addend2 - Addend1num
+		"x":
+			answer = addend2 * Addend1num
+		"÷":
+			if(Addend1num > addend2):
+				answer = float(Addend1num) / addend2
+			else:
+				answer = float(addend2) / Addend1num
+		_:
+			pass
+	set_Answer(answer)
+
+func set_Question():
+	
+	if(mathType =="÷" or mathType =="-"):
+		if(Addend1num > Addend2num):
+			addend1Txt.text = str(Addend1num)
+			addend2Txt.text = str(Addend2num)
+		else:
+			addend1Txt.text = str(Addend2num)
+			addend2Txt.text = str(Addend1num)
+	else:
+		addend1Txt.text = str(Addend1num)
+		addend2Txt.text = str(Addend2num)
+		
 func set_Answer(answer:int):
 
 	answerTxt.text = str(answer)
@@ -103,8 +135,9 @@ func _check_answer(check_answer:int):
 func nextAddend():
 		var index = Addend2.find(Addend2num, 0) 
 		if (index + 1 < Addend2.size()):
-			addend2Txt.text = str(Addend2[index + 1])
+			#addend2Txt.text = str(Addend2[index + 1])
 			Addend2num = Addend2[index +1]
+			set_Question()
 			get_answer(Addend2num)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
