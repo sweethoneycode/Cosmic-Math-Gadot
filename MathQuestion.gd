@@ -20,6 +20,7 @@ var random = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	mathType = PlayerVariables.stage
 	Addend1num = 1
 	
 	if(mathType == "/"):

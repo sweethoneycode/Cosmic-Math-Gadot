@@ -6,9 +6,13 @@ var selectLabel
 # var b = "text"
 onready var planetLabel := $PlanetLabel
 onready var shipLabel := $"%ShipLabel"
+export var planetImg = preload("res://images/Planets/subtraction.png")
+var scene = preload("res://MathStage.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$TextureRect.texture = planetImg
 	mathPlanet()
 	
 
@@ -32,3 +36,10 @@ func mathPlanet():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_TextureButton_pressed():
+	PlayerVariables.stage = mathType
+	print(PlayerVariables.stage)
+	get_tree().change_scene("res://MathStage.tscn")
+
