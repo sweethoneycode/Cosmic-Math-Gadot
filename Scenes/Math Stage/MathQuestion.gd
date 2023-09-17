@@ -1,9 +1,13 @@
-extends Node2D
+extends Control
 
 onready var symbolTxt := $"%Symbol"
 onready var addend1Txt := $"%Num1"
 onready var addend2Txt := $"%Num2"
 onready var answerTxt := $"%AnswerNum"
+onready var answerTimer := $"%answerTimer"
+
+onready var correctSFX := $"%CorrectSFX"
+onready var wrongSFX := $"%WrongSFX"
 
 var Addend2 = []
 var answer = 0
@@ -127,11 +131,17 @@ func set_Answer(answer:int):
 	Signals.emit_signal("get_answers", answer)
 	
 func _check_answer(check_answer:int):
+	show_answer()
+	
 	if(check_answer == answer):
-		print("Correct!")
+		correctSFX.play()
 	else:
-		print("Incorrect!")
-	nextAddend()
+		wrongSFX.play()
+	
+
+func show_answer():
+	answerTimer.start()
+	answerTxt.show()
 
 func nextAddend():
 		var index = Addend2.find(Addend2num, 0) 
@@ -143,3 +153,7 @@ func nextAddend():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_answerTimer_timeout():
+	answerTxt.hide() # Replace with function body.
+	nextAddend()

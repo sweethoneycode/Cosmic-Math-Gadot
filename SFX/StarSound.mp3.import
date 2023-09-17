@@ -11,5 +11,5 @@ dest_files=[ "res://.import/StarSound.mp3-f88eeda331b6f5ca7931b4c4d0f183ed.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

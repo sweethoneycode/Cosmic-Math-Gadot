@@ -4,15 +4,17 @@ var selectLabel
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var planetLabel := $PlanetLabel
+onready var planetLabel := $"%PlanetLabel"
 onready var shipLabel := $"%ShipLabel"
 export var planetImg = preload("res://images/Planets/subtraction.png")
+export var planetSpeed := 1
 var scene = preload("res://MathStage.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TextureRect.texture = planetImg
+	$Sprite.texture = planetImg
+	$Sprite.set_speed(planetSpeed)
 	mathPlanet()
 	
 
@@ -35,6 +37,7 @@ func mathPlanet():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
+
 #	pass
 
 

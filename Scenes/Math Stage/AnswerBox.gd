@@ -14,6 +14,7 @@ onready var answerbox1 := $Box1/Button/Label
 onready var answerbox2 := $Box2/Button/Label
 onready var answerbox3 := $Box3/Button/Label
 
+
 func _enter_tree():
 	Signals.connect("get_answers", self, "_get_answers")
 

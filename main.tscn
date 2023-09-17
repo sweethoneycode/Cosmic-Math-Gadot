@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://images/GameUI/cosmic-space-graphic-logo.png" type="Texture" id=1]
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
@@ -12,6 +12,94 @@
 [sub_resource type="DynamicFont" id=1]
 size = 70
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.662745, 0.25098, 0.25098, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.85098, 0.447059, 0.447059, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 108
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.705882, 0.984314, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.992157, 0.705882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.705882, 0.984314, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.705882, 0.984314, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
 
 [node name="Node2D" type="Control"]
 anchor_right = 1.0
@@ -32,18 +120,124 @@ randomness = 0.5
 lifetime_randomness = 0.5
 emission_shape = 2
 emission_rect_extents = Vector2( 1300, 1200 )
-direction = Vector2( 0, 0 )
-gravity = Vector2( 0, 0 )
+direction = Vector2( 0, 0.5 )
+gravity = Vector2( 0, 1 )
 scale_amount = 3.0
 hue_variation = 0.5
 hue_variation_random = 0.5
 
-[node name="TitleGraphic" type="TextureRect" parent="."]
-anchor_right = 1.0
-margin_left = 6.0
-margin_top = 28.0
-margin_right = 6.0
-margin_bottom = 136.0
+[node name="quitBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = -303.0
+margin_right = 130.0
+margin_bottom = -199.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 4 )
+text = "Exit"
+script = ExtResource( 3 )
+
+[node name="SettingsMenu" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+margin_left = 836.5
+margin_top = 420.0
+margin_right = 876.5
+margin_bottom = 460.0
+
+[node name="RichTextLabel" type="Label" parent="SettingsMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -94.5
+margin_top = -296.0
+margin_right = 315.5
+margin_bottom = -168.0
+rect_pivot_offset = Vector2( 171.5, 60 )
+focus_mode = 2
+custom_fonts/font = SubResource( 3 )
+text = "Settings"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="PrivacyBtn" type="Button" parent="SettingsMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.5
+margin_top = 214.0
+margin_right = 325.5
+margin_bottom = 303.0
+rect_pivot_offset = Vector2( 127, 44 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/normal = SubResource( 2 )
+text = "Privacy Policy"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Menu" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = -120.0
+margin_right = 123.5
+margin_bottom = 109.0
+
+[node name="Play" type="Button" parent="Menu"]
+margin_right = 247.0
+margin_bottom = 89.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "PLAY"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="SettingsBtn" type="Button" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = 38.5
+margin_right = 140.0
+margin_bottom = 127.5
+rect_pivot_offset = Vector2( 127, 44 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/normal = SubResource( 2 )
+text = "Settings"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TitleGraphic" type="TextureRect" parent="Menu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -285.0
+margin_top = -270.0
+margin_right = 319.0
+margin_bottom = -162.0
 grow_horizontal = 0
 rect_min_size = Vector2( 604, 108 )
 size_flags_horizontal = 5
@@ -52,57 +246,54 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="quitBtn" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -170.0
-margin_right = 124.0
-margin_bottom = -66.0
-custom_fonts/font = SubResource( 1 )
-text = "Exit"
-flat = true
-script = ExtResource( 3 )
+[node name="Planets" type="Node2D" parent="."]
+visible = false
 
-[node name="Division" parent="." instance=ExtResource( 6 )]
+[node name="Division" parent="Planets" instance=ExtResource( 6 )]
 margin_left = 1316.0
 margin_top = 623.0
 margin_right = 1316.48
-margin_bottom = 622.76
+margin_bottom = 623.0
 mathType = "/"
 planetImg = ExtResource( 5 )
+planetSpeed = 3
 
-[node name="Multiplication" parent="." instance=ExtResource( 6 )]
-margin_left = 157.0
-margin_top = 680.0
-margin_right = 157.48
-margin_bottom = 679.76
+[node name="Multiplication" parent="Planets" instance=ExtResource( 6 )]
+margin_left = 263.0
+margin_top = 682.0
+margin_right = 263.48
+margin_bottom = 682.0
+rect_scale = Vector2( 0.800001, 0.8 )
 mathType = "x"
 planetImg = ExtResource( 7 )
 
-[node name="Subtraction" parent="." instance=ExtResource( 6 )]
+[node name="Subtraction" parent="Planets" instance=ExtResource( 6 )]
 margin_left = 1363.0
 margin_top = 152.0
 margin_right = 1363.48
-margin_bottom = 151.76
+margin_bottom = 152.0
+rect_scale = Vector2( 0.600005, 0.64 )
 mathType = "-"
 
-[node name="Addition" parent="." instance=ExtResource( 6 )]
+[node name="Addition" parent="Planets" instance=ExtResource( 6 )]
 anchor_left = 0.118
 anchor_top = 0.139
 anchor_right = 0.274
 anchor_bottom = 0.417
-margin_left = 0.439987
-margin_top = -0.12001
-margin_right = 0.919983
-margin_bottom = -0.360016
+margin_left = 227.0
+margin_top = 150.0
+margin_right = 227.48
+margin_bottom = 150.0
 planetImg = ExtResource( 4 )
+planetSpeed = 0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 960, 541 )
 stream = ExtResource( 8 )
-volume_db = -25.0
+volume_db = -15.387
 autoplay = true
 
 [connection signal="pressed" from="quitBtn" to="quitBtn" method="_on_quitBtn_pressed"]
+[connection signal="pressed" from="SettingsMenu/PrivacyBtn" to="quitBtn" method="_on_PrivacyBtn_pressed"]
+[connection signal="pressed" from="Menu/Play" to="quitBtn" method="_on_Play_pressed"]
+[connection signal="pressed" from="Menu/SettingsBtn" to="quitBtn" method="_on_SettingsBtn_pressed"]

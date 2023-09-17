@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Correct 2.mp3-87c6b698b84ed03457259946461455c4.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

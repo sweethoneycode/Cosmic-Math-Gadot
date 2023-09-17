@@ -16,7 +16,9 @@ script = ExtResource( 2 )
 margin_left = -2.0
 margin_right = 207.0
 margin_bottom = 213.0
+focus_mode = 0
 shortcut_in_tooltip = false
+enabled_focus_mode = 0
 flat = true
 icon_align = 1
 
