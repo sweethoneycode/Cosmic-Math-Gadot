@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://images/Aliens/alien_square alien.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 257, 103, 311, 482 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 242, 643, 56, 94 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 447, 647, 57, 87 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 511, 37, 36, 29 )
+
+[node name="SquareAlien" type="KinematicBody2D"]
+
+[node name="body" type="Sprite" parent="."]
+position = Vector2( 72, 80 )
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="lft leg" type="Sprite" parent="body"]
+position = Vector2( -875, -449 )
+z_index = -1
+texture = SubResource( 3 )
+offset = Vector2( 789, 722 )
+
+[node name="rght leg" type="Sprite" parent="body"]
+position = Vector2( -730, -449 )
+z_index = -1
+texture = SubResource( 4 )
+offset = Vector2( 789, 722 )
+
+[node name="left pupil2" type="Sprite" parent="body"]
+position = Vector2( 113, -197 )
+texture = SubResource( 2 )
+
+[node name="left pupil" type="Sprite" parent="body"]
+position = Vector2( -104, -194 )
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="KinematicBody2D" type="Node2D" parent="."]
+position = Vector2( -6, 2 )
+
+[node name="body" type="Polygon2D" parent="KinematicBody2D"]
+position = Vector2( -11, -5 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 338, 295, 342.748, 208.626, 371.748, 142.626, 358.748, 106.626, 296.748, 94.626, 243.902, 130.081, 257.724, 180.488, 268, 294, 265.748, 582.626, 358.748, 606.626, 455, 606, 536.748, 588.626, 551.748, 303.626, 555.748, 219.626, 581.748, 151.626, 575.748, 103.626, 526.748, 95.626, 463.748, 114.626, 459.748, 169.626, 487.748, 211.626, 475.748, 299.626 )
+uv = PoolVector2Array( 341, 287, 346, 207, 375, 141, 362, 105, 300, 93, 252, 117, 241, 183, 266, 218, 269, 581, 362, 605, 501, 600, 540, 587, 555, 302, 559, 218, 585, 150, 579, 102, 530, 94, 467, 113, 463, 168, 491, 210, 479, 298 )
+bones = [ "Body", PoolRealArray( 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.5 ), "Body/baseyeL", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "Body/baseyeL/eyeL", PoolRealArray( 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "Body/baseyeR", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), "Body/baseyeR/Bone2D", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0 ) ]
+
+[node name="eyes" type="Polygon2D" parent="KinematicBody2D"]
+position = Vector2( 306, 146 )
+offset = Vector2( -322, -53 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 300, 53.7234, 306.383, 35.1064, 323.404, 35.1064, 343.617, 47.3404, 346.277, 63.2979, 330.851, 72.3404, 301.596, 65.4255 )
+uv = PoolVector2Array( 302, 55, 303.191, 31.383, 323.404, 35.1064, 343.617, 47.3404, 346.277, 63.2979, 330.851, 72.3404, 301.596, 65.4255 )
+
+[node name="eyes2" type="Polygon2D" parent="KinematicBody2D"]
+position = Vector2( 527, 148 )
+offset = Vector2( -324, -54 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 300, 53.7234, 306.383, 35.1064, 323.404, 35.1064, 343.617, 47.3404, 346.277, 63.2979, 330.851, 72.3404, 301.596, 65.4255 )
+uv = PoolVector2Array( 302, 55, 303.191, 31.383, 323.404, 35.1064, 343.617, 47.3404, 346.277, 63.2979, 330.851, 72.3404, 301.596, 65.4255 )
+
+[node name="lft leg" type="Polygon2D" parent="KinematicBody2D"]
+position = Vector2( 347, 583 )
+z_index = -1
+offset = Vector2( -289, -649 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 244, 746, 303, 742, 305, 644, 275, 639, 271, 720, 241, 727 )
+uv = PoolVector2Array( 244, 746, 303, 742, 305, 644, 275, 639, 271, 720, 241, 727 )
+
+[node name="rght leg" type="Polygon2D" parent="KinematicBody2D"]
+position = Vector2( 454, 590 )
+z_index = -1
+offset = Vector2( -454, -652 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 518.248, 728.478, 478.832, 716.069, 474.468, 644.219, 440.426, 639.431, 446.809, 732.516, 504.38, 739.427 )
+uv = PoolVector2Array( 244, 746, 303, 742, 305, 644, 275, 639, 271, 720, 241, 727 )

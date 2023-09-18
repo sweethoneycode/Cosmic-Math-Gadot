@@ -61,6 +61,7 @@ expand = true
 
 [node name="ShipLabel" type="Label" parent="StageUFO"]
 unique_name_in_owner = true
+visible = false
 anchor_left = 0.825
 anchor_top = 1.24
 anchor_right = 0.825

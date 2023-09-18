@@ -199,8 +199,10 @@ margin_right = 123.5
 margin_bottom = 109.0
 
 [node name="Play" type="Button" parent="Menu"]
-margin_right = 247.0
-margin_bottom = 89.0
+margin_left = 2.0
+margin_top = 45.0
+margin_right = 249.0
+margin_bottom = 134.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -216,10 +218,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -135.0
-margin_top = 38.5
-margin_right = 140.0
-margin_bottom = 127.5
+margin_left = -133.0
+margin_top = 83.5
+margin_right = 142.0
+margin_bottom = 172.5
 rect_pivot_offset = Vector2( 127, 44 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
