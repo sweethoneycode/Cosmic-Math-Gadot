@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Math Stage/Box.gd" type="Script" id=2]
 [ext_resource path="res://images/GameUI/answerBox.png" type="Texture" id=3]
+[ext_resource path="res://images/GameUI/bolt.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -38,5 +39,20 @@ align = 1
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="CorrectBolts" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2( 97, 79 )
+emitting = false
+amount = 4
+one_shot = true
+speed_scale = 2.0
+randomness = 1.0
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector2( 0, 0 )
+gravity = Vector2( 0, 0 )
+scale_amount = 2.0
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

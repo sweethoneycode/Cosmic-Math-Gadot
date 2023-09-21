@@ -45,12 +45,12 @@ func _ready():
 
 
 func setDivideNum():
-	print("Divide")
+
 	if(Addend1num < 11):
 		minNum = 1
 		maxNum = 1
 	else:
-		minNum = 0
+		minNum = 1
 		maxNum = 21
 	
 	randomize()
@@ -85,7 +85,7 @@ func setSecondNum():
 	
 		
 	Addend2.shuffle()
-	#print(Addend2)
+
 	#addend2Txt.text = str(Addend2[0])
 	Addend2num = Addend2[0]
 	set_Question()
@@ -134,6 +134,7 @@ func _check_answer(check_answer:int):
 	show_answer()
 	
 	if(check_answer == answer):
+		Signals.emit_signal("correctAns")
 		correctSFX.play()
 	else:
 		wrongSFX.play()

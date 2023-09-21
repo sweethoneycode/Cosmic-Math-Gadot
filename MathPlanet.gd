@@ -22,15 +22,16 @@ func mathPlanet():
 	
 	match mathType:
 		"+":
-			print("+")
+			pass
 		"-":
-			print("-")
+			pass
 		"x":
-			print("x")
+			pass
 		"/":
 			mathType = "÷"
 		_:
 			pass
+			
 	shipLabel.text = "0"
 	planetLabel.text = mathType
 # what planet was selected and use that to choose what math type to use 
@@ -43,6 +44,5 @@ func mathPlanet():
 
 func _on_TextureButton_pressed():
 	PlayerVariables.stage = mathType
-	print(PlayerVariables.stage)
 	get_tree().change_scene("res://MathStage.tscn")
 
