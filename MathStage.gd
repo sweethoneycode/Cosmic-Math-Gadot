@@ -3,6 +3,7 @@ extends Node2D
 var wrongAnswers: int = 0
 onready var additionIMG := $"%Additionbckgrnd"
 onready var subtrationIMG := $"%Subtractionbckgrnd"
+onready var MultiplicationIMG := $"%Multiplicationbckgrnd"
 
 var mathType = "+"
 
@@ -18,7 +19,7 @@ func pickBckgrnd():
 			"-":
 				subtrationIMG.show()
 			"x":
-				pass
+				MultiplicationIMG.show()
 			"/":
 				pass
 			_:
