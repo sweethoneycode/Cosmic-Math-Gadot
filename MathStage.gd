@@ -4,15 +4,18 @@ var wrongAnswers: int = 0
 onready var additionIMG := $"%Additionbckgrnd"
 onready var subtrationIMG := $"%Subtractionbckgrnd"
 onready var MultiplicationIMG := $"%Multiplicationbckgrnd"
+onready var DivisionIMG := $"%Divisionbckgrnd"
 
 var mathType = "+"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mathType = PlayerVariables.stage
+	print(mathType)
 	pickBckgrnd()
 	
 func pickBckgrnd():
+	
 		match mathType:
 			"+":
 				additionIMG.show()
@@ -20,8 +23,8 @@ func pickBckgrnd():
 				subtrationIMG.show()
 			"x":
 				MultiplicationIMG.show()
-			"/":
-				pass
+			"÷":
+				DivisionIMG.show()
 			_:
 				pass
 			
