@@ -44,5 +44,6 @@ func mathPlanet():
 
 func _on_TextureButton_pressed():
 	PlayerVariables.stage = mathType
-	get_tree().change_scene("res://MathStage.tscn")
+	
+	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
 

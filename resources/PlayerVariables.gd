@@ -1,4 +1,6 @@
 extends Node
 
 var stage := ""
-var  signalStart := false
+var levelStart := 0
+var signalStart := false
+var stageStars := 0

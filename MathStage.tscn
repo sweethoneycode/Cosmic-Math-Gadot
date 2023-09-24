@@ -5,7 +5,7 @@
 [ext_resource path="res://MathStage.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Math Stage/AnswerBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://images/Ships/Sprite-03.png" type="Texture" id=5]
-[ext_resource path="res://images/GameUI/navarrow.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/ControlBtn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://images/Planets/Subtraction_Planet.png" type="Texture" id=7]
 [ext_resource path="res://images/Planets/Multiplication_planet.png" type="Texture" id=8]
 [ext_resource path="res://images/Planets/addition_surface.png" type="Texture" id=9]
@@ -63,16 +63,4 @@ margin_right = -265.0
 margin_bottom = -8.0
 mathType = "-"
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="BackBtn" type="TextureButton" parent="Control"]
-margin_left = 24.0
-margin_top = 20.0
-margin_right = 134.0
-margin_bottom = 130.0
-texture_normal = ExtResource( 6 )
-expand = true
-
-[connection signal="pressed" from="Control/BackBtn" to="." method="_on_BackBtn_pressed"]
+[node name="Control" parent="." instance=ExtResource( 6 )]

@@ -23,13 +23,19 @@ export var version := 1
 # When saving this resource, they'll get saved alongside it.
 
 
-
-
 #export var inventory: Resource = Inventory.new()
-
 #export var map_name := ""
 #export var global_position := Vector2.ZERO
 
+export var additionLevel := [0]
+export var subtractionLevel := [0]
+export var multiplcationLevel := [0]
+export var divisionLevel := [0]
+
+export var AdditionComplete: bool
+export var SubtractionComplete: bool
+export var MultiComplete: bool
+export var DivisionComplete: bool
 
 # The next three functions are just to keep the save API inside of the SaveGame resource.
 # Note that this has safety issues if players download savegame files from the 
@@ -45,6 +51,7 @@ static func save_exists() -> bool:
 
 static func load_savegame() -> Resource:
 	var save_path := get_save_path()
+
 	if OS.get_name() == "Windows" or OS.get_name() == "HTML5":
 		return ResourceLoader.load(save_path, "", true)
 		
@@ -81,7 +88,7 @@ static func load_savegame() -> Resource:
 
 	# We load the temporary file as a resource.
 	var save = ResourceLoader.load(tmp_file_path, "", true)
-	# And make it take over the save path for the next time the player
+	# And make0,0 it take over the save path for the next time the player
 	# saves.
 	save.take_over_path(save_path)
 

@@ -8,10 +8,10 @@ onready var DivisionIMG := $"%Divisionbckgrnd"
 
 var mathType = "+"
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mathType = PlayerVariables.stage
-	print(mathType)
 	pickBckgrnd()
 	
 func pickBckgrnd():
@@ -32,5 +32,4 @@ func pickBckgrnd():
 #func _process(delta):
 #	pass
 
-func _on_BackBtn_pressed():
-	get_tree().change_scene("res://main.tscn")
+

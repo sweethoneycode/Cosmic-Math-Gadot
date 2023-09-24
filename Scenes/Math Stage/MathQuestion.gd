@@ -1,5 +1,7 @@
 extends Control
 
+var _save: SaveGame
+
 onready var symbolTxt := $"%Symbol"
 onready var addend1Txt := $"%Num1"
 onready var addend2Txt := $"%Num2"
@@ -18,14 +20,19 @@ var maxNum = 0
 export var Addend1num: int = 0
 var Addend2num: int = 0
 export var mathType = "+"
-var number: = 0
+var number := 0
 var random = RandomNumberGenerator.new()
+
+var guesses := 0
+var wrongans := 0
+var starCount := 0
+var correctAns := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	mathType = PlayerVariables.stage
-	Addend1num = 1
+	Addend1num = PlayerVariables.levelStart
 	
 	if(mathType == "/"):
 		mathType="÷"
@@ -132,13 +139,14 @@ func set_Answer(answer:int):
 	
 func _check_answer(check_answer:int):
 	show_answer()
+	guesses += 1
 	
 	if(check_answer == answer):
 		Signals.emit_signal("correctAns")
 		correctSFX.play()
 	else:
+		wrongans += 1
 		wrongSFX.play()
-	
 
 func show_answer():
 	answerTimer.start()
@@ -157,4 +165,45 @@ func nextAddend():
 
 func _on_answerTimer_timeout():
 	answerTxt.hide() # Replace with function body.
-	nextAddend()
+	
+	if(guesses != 5):
+		nextAddend()
+	else:
+		_save()
+		get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+
+func stageStars():
+	
+	correctAns = guesses - wrongans
+	
+	if (correctAns >= 4):
+		starCount = 1;
+		
+	if (correctAns >= 5 && correctAns <= 8):
+		starCount = 2;
+
+	if (correctAns == 9 || correctAns == 10):
+		starCount = 3;
+	
+		
+func _save() -> void:
+		_save = SaveGame.load_savegame()
+		match mathType:
+			"+":
+				print(Addend1num)
+				
+				if(_save.additionLevel.empty()):
+					_save.additionLevel.append(starCount)
+				else:
+					_save.additionLevel.insert(Addend1num, starCount)
+					
+				print(_save.additionLevel[Addend1num])
+			"-":
+				_save.subtractionLevel.insert(Addend1num, starCount)
+			"x":
+				_save.multiplcationLevel.insert(Addend1num, starCount)
+			"÷":
+				_save.multiplcationLevel.insert(Addend1num, starCount)
+			_:
+				pass 
+		_save.write_savegame()
