@@ -29,18 +29,18 @@ func checkStage():
 	
 	match mathType:
 		"+":
-			print (_save.levels)
+			print (_save.AdditionComplete)
 			currMath = "addition"
 		"-":
-			print (_save.levels)
+			print (_save.SubtractionComplete)
 			currMath = "subtraction"
 		"x":
-			print (_save.levels)
+			print (_save.MultiComplete)
 			currMath = "multiplication"
 		"÷":
 			if(self.name == str(0)):
 				self.disabled = true
-			print (_save.divisionLevel)
+			print (_save.DivisionComplete)
 			currMath = "division"
 		_:
 			currMath = "addition"
