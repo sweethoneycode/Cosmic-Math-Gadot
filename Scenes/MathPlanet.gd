@@ -8,7 +8,7 @@ onready var planetLabel := $"%PlanetLabel"
 onready var shipLabel := $"%ShipLabel"
 export var planetImg = preload("res://images/Planets/subtraction.png")
 export var planetSpeed := 1
-var scene = preload("res://MathStage.tscn")
+var scene = preload("res://Scenes/MathStage.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

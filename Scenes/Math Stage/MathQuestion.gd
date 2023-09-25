@@ -149,7 +149,7 @@ func _check_answer(check_answer:int):
 func show_answer():
 	
 	answerTxt.show()
-	if(guesses != 3):
+	if(guesses != 5):
 		answerTimer.start()
 	else:
 		stageStars()

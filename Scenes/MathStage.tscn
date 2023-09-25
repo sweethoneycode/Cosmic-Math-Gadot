@@ -1,18 +1,18 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://images/Planets/addition_planet.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Math Stage/MathQuestion.tscn" type="PackedScene" id=2]
-[ext_resource path="res://MathStage.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Math Stage/AnswerBox.tscn" type="PackedScene" id=4]
-[ext_resource path="res://images/Ships/Sprite-03.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/ControlBtn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/ControlBtn.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Math Stage/AnswerBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Math Stage/MathQuestion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/Planets/addition_planet.png" type="Texture" id=4]
+[ext_resource path="res://images/GameUI/Inside-ship.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/MathStage.gd" type="Script" id=6]
 [ext_resource path="res://images/Planets/Subtraction_Planet.png" type="Texture" id=7]
-[ext_resource path="res://images/Planets/Multiplication_planet.png" type="Texture" id=8]
+[ext_resource path="res://images/Ships/Sprite-03.png" type="Texture" id=8]
 [ext_resource path="res://images/Planets/addition_surface.png" type="Texture" id=9]
-[ext_resource path="res://images/GameUI/Inside-ship.png" type="Texture" id=10]
+[ext_resource path="res://images/Planets/Multiplication_planet.png" type="Texture" id=10]
 
 [node name="MathStage" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 6 )
 
 [node name="bckgrounds" type="Node2D" parent="."]
 position = Vector2( 646, 454 )
@@ -21,7 +21,7 @@ scale = Vector2( 0.786182, 0.783722 )
 [node name="Additionbckgrnd" type="Sprite" parent="bckgrounds"]
 unique_name_in_owner = true
 visible = false
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="Subtractionbckgrnd" type="Sprite" parent="bckgrounds"]
 unique_name_in_owner = true
@@ -33,7 +33,7 @@ texture = ExtResource( 7 )
 unique_name_in_owner = true
 visible = false
 position = Vector2( 272.202, -37.0029 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="Divisionbckgrnd" type="Sprite" parent="bckgrounds"]
 unique_name_in_owner = true
@@ -45,22 +45,22 @@ texture = ExtResource( 9 )
 position = Vector2( 1577, 605 )
 
 [node name="Sprite" type="Sprite" parent="Rocket"]
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Inside-ship" type="Sprite" parent="."]
 visible = false
 position = Vector2( 956, 535 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 
-[node name="AnswerBoxes" parent="." instance=ExtResource( 4 )]
+[node name="AnswerBoxes" parent="." instance=ExtResource( 2 )]
 position = Vector2( 227, 726 )
 
-[node name="MathQuestion" parent="." instance=ExtResource( 2 )]
+[node name="MathQuestion" parent="." instance=ExtResource( 3 )]
 margin_left = -265.0
 margin_top = -8.0
 margin_right = -265.0
 margin_bottom = -8.0
 mathType = "-"
 
-[node name="Control" parent="." instance=ExtResource( 6 )]
+[node name="Control" parent="." instance=ExtResource( 1 )]

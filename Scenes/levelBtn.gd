@@ -32,7 +32,9 @@ func checkStage():
 			if(!_save.AdditionComplete.empty()):
 				if(_save.AdditionComplete.has(currentLevel)):
 					var stars = _save.AdditionComplete.get(currentLevel)
-					self.disabled = false
+					for star in $stars.get_children():
+						if(int(star.name) <= stars):
+							star.show()
 				else:
 					self.disabled = true
 			currMath = "addition"
@@ -64,4 +66,4 @@ func checkStage():
 
 func _on_Level_pressed():
 	PlayerVariables.levelStart = int(self.name)
-	get_tree().change_scene("res://MathStage.tscn")
+	get_tree().change_scene("res://Scenes/MathStage.tscn")
