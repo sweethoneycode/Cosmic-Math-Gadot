@@ -185,6 +185,6 @@ func stageStars():
 	if (correctAns == 9 || correctAns == 10):
 		starCount = 3;
 		
-	Signals.emit_signal("level_complete",Addend1num, starCount)
+	Signals.emit_signal("level_complete", Addend1num, starCount)
 		
 
