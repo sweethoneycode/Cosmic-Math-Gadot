@@ -4,6 +4,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+onready var answerBox := $Button
 onready var answerLbl := $Button/Label
 onready var correctBolts := $"%CorrectBolts"
 
@@ -20,4 +21,5 @@ func _ready():
 func _on_Button_pressed():
 	#print(answerLbl.text)
 	Signals.emit_signal("check_answer", str2var(answerLbl.text))
+	answerBox.disabled = true
 	 # Replace with function body.

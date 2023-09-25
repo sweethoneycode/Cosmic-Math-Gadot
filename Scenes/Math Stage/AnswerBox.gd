@@ -61,6 +61,10 @@ func _get_answers(answer:int):
 
 func displayAnswers():
 
+		$Box1/Button.disabled = false
+		$Box2/Button.disabled = false
+		$Box3/Button.disabled = false
+		
 		answerbox1.text = str(answers[0])
 		answerbox2.text = str(answers[1])
 		answerbox3.text = str(answers[2])

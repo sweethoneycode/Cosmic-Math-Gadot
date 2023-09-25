@@ -29,7 +29,7 @@ func checkStage():
 	
 	match mathType:
 		"+":
-			print (_save.additionLevel)
+			print (_save.CompletedLevels)
 			currMath = "addition"
 		"-":
 			print (_save.subtractionLevel)

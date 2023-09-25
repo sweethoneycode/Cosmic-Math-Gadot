@@ -7,6 +7,7 @@ signal correctAns()
 signal check_answer(answer)
 signal set_answer(answer)
 signal show_answer()
+signal level_complete(level, stars)
 
 
 #signal on_score_increment(amount)

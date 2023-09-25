@@ -1,7 +1,5 @@
 extends Control
 
-var _save: SaveGame
-
 onready var symbolTxt := $"%Symbol"
 onready var addend1Txt := $"%Num1"
 onready var addend2Txt := $"%Num2"
@@ -149,8 +147,13 @@ func _check_answer(check_answer:int):
 		wrongSFX.play()
 
 func show_answer():
-	answerTimer.start()
+	
 	answerTxt.show()
+	if(guesses != 5):
+		answerTimer.start()
+	else:
+		stageStars()
+	
 
 func nextAddend():
 		var index = Addend2.find(Addend2num, 0) 
@@ -166,11 +169,8 @@ func nextAddend():
 func _on_answerTimer_timeout():
 	answerTxt.hide() # Replace with function body.
 	
-	if(guesses != 5):
-		nextAddend()
-	else:
-		_save()
-		get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+	nextAddend()
+	
 
 func stageStars():
 	
@@ -184,26 +184,7 @@ func stageStars():
 
 	if (correctAns == 9 || correctAns == 10):
 		starCount = 3;
-	
 		
-func _save() -> void:
-		_save = SaveGame.load_savegame()
-		match mathType:
-			"+":
-				print(Addend1num)
-				
-				if(_save.additionLevel.empty()):
-					_save.additionLevel.append(starCount)
-				else:
-					_save.additionLevel.insert(Addend1num, starCount)
-					
-				print(_save.additionLevel[Addend1num])
-			"-":
-				_save.subtractionLevel.insert(Addend1num, starCount)
-			"x":
-				_save.multiplcationLevel.insert(Addend1num, starCount)
-			"÷":
-				_save.multiplcationLevel.insert(Addend1num, starCount)
-			_:
-				pass 
-		_save.write_savegame()
+	Signals.emit_signal("level_complete",Addend1num, starCount)
+		
+
