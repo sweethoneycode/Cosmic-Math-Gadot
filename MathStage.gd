@@ -35,13 +35,16 @@ func pickBckgrnd():
 func _saveProgress(stagenum, stars) -> void:
 		match mathType:
 			"+":
-				_save.AdditionComplete["level" + str(stagenum)] = stars
+				_save.AdditionComplete[str(stagenum)] = stars
+				if (stagenum < 21):
+					var nextstage = stagenum + 1
+					_save.AdditionComplete[str(nextstage)] = 0
 			"-":
-				_save.SubtractionComplete["level" + str(stagenum)] = stars
+				_save.SubtractionComplete[str(stagenum)] = stars
 			"x":
-				_save.MultiComplete["level" + str(stagenum)] = stars
+				_save.MultiComplete[str(stagenum)] = stars
 			"÷":
-				_save.DivisionComplete["level" + str(stagenum)] = stars
+				_save.DivisionComplete[str(stagenum)] = stars
 			_:
 				pass 
 		_save.write_savegame()

@@ -14,6 +14,7 @@ onready var levelTXt := $"%levelTXT"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	currentLevel = self.name
 	_create_or_load_save() #load saved game
 	checkStage()
 
@@ -24,12 +25,16 @@ func _create_or_load_save() -> void:
 func checkStage():
 	mathType = PlayerVariables.stage
 	
-	currentLevel == int(self.name)
-	levelNum.text = self.name
+	levelNum.text = currentLevel
 	
 	match mathType:
 		"+":
-			print (_save.AdditionComplete)
+			if(!_save.AdditionComplete.empty()):
+				if(_save.AdditionComplete.has(currentLevel)):
+					var stars = _save.AdditionComplete.get(currentLevel)
+					self.disabled = false
+				else:
+					self.disabled = true
 			currMath = "addition"
 		"-":
 			print (_save.SubtractionComplete)
@@ -40,6 +45,7 @@ func checkStage():
 		"÷":
 			if(self.name == str(0)):
 				self.disabled = true
+				
 			print (_save.DivisionComplete)
 			currMath = "division"
 		_:

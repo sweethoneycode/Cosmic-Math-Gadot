@@ -95,6 +95,31 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="2" type="Button" parent="FactorSelect/Page1"]
+margin_left = 474.0
+margin_right = 686.0
+margin_bottom = 206.0
+focus_mode = 0
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 3 )
+flat = true
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="FactorSelect/Page1/2"]
+margin_left = 36.0
+margin_top = 47.0
+margin_right = 177.0
+margin_bottom = 174.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="Page2" type="GridContainer" parent="FactorSelect"]
 visible = false
 anchor_left = 0.5
@@ -333,3 +358,4 @@ __meta__ = {
 
 [connection signal="pressed" from="FactorSelect/Page1/0" to="FactorSelect/Page1/0" method="_on_Level_pressed"]
 [connection signal="pressed" from="FactorSelect/Page1/1" to="FactorSelect/Page1/1" method="_on_Level_pressed"]
+[connection signal="pressed" from="FactorSelect/Page1/2" to="FactorSelect/Page1/2" method="_on_Level_pressed"]
