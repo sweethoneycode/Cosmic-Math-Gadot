@@ -29,13 +29,13 @@ func checkStage():
 	
 	match mathType:
 		"+":
-			print (_save.CompletedLevels)
+			print (_save.levels)
 			currMath = "addition"
 		"-":
-			print (_save.subtractionLevel)
+			print (_save.levels)
 			currMath = "subtraction"
 		"x":
-			print (_save.multiplcationLevel)
+			print (_save.levels)
 			currMath = "multiplication"
 		"÷":
 			if(self.name == str(0)):

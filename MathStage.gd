@@ -8,20 +8,15 @@ onready var subtrationIMG := $"%Subtractionbckgrnd"
 onready var MultiplicationIMG := $"%Multiplicationbckgrnd"
 onready var DivisionIMG := $"%Divisionbckgrnd"
 
-var completedLevels : CompletedLevels = null setget set_levels
 var mathType = "+"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mathType = PlayerVariables.stage
 	pickBckgrnd()
-	Signals.connect("level_complete", self, "_save")
+	Signals.connect("level_complete", self, "_saveProgress")
 	_save = SaveGame.load_savegame()
 
-func set_levels(new_levels: CompletedLevels) -> void:
-	completedLevels = new_levels
-	
 func pickBckgrnd():
 	
 		match mathType:
@@ -37,18 +32,18 @@ func pickBckgrnd():
 				pass
 			
 			
-func _save(stagenum, stars) -> void:
-		_save = SaveGame.load_savegame()
+func _saveProgress(stagenum, stars) -> void:
+
 		print(stagenum, stars)
 		match mathType:
 			"+":
-				completedLevels.add_item("addition" + str(stagenum), stars)
+				pass
 			"-":
-				_save.subtractionLevel.insert(stagenum, stars)
+				pass
 			"x":
-				_save.multiplcationLevel.insert(stagenum, stars)
+				pass
 			"÷":
-				_save.multiplcationLevel.insert(stagenum, stars)
+				pass
 			_:
 				pass 
 		_save.write_savegame()

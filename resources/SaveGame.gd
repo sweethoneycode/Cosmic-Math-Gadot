@@ -27,7 +27,7 @@ export var version := 1
 #export var map_name := ""
 #export var global_position := Vector2.ZERO
 
-export var CompletedLevels: Resource
+export var levels: Resource
 
 
 export var AdditionComplete: bool
