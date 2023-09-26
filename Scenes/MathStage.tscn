@@ -7,7 +7,7 @@
 [ext_resource path="res://images/GameUI/Inside-ship.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/MathStage.gd" type="Script" id=6]
 [ext_resource path="res://images/Planets/Subtraction_Planet.png" type="Texture" id=7]
-[ext_resource path="res://images/Ships/Sprite-03.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Rocket.tscn" type="PackedScene" id=8]
 [ext_resource path="res://images/Planets/addition_surface.png" type="Texture" id=9]
 [ext_resource path="res://images/Planets/Multiplication_planet.png" type="Texture" id=10]
 
@@ -41,11 +41,7 @@ visible = false
 position = Vector2( 167.9, -19.1394 )
 texture = ExtResource( 9 )
 
-[node name="Rocket" type="Node2D" parent="."]
-position = Vector2( 1577, 605 )
-
-[node name="Sprite" type="Sprite" parent="Rocket"]
-texture = ExtResource( 8 )
+[node name="Rocket" parent="." instance=ExtResource( 8 )]
 
 [node name="Inside-ship" type="Sprite" parent="."]
 visible = false

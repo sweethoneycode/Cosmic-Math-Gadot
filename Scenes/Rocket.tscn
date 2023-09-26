@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://images/Ships/Sprite-03.png" type="Texture" id=1]
+[ext_resource path="res://images/GameUI/img_game_sprite.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 638.233, 3081.96, 284.798, 331.664 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.966797, 0.549459, 0.0377655, 1, 1, 1, 1, 1 )
+
+[node name="Rocket" type="Node2D"]
+position = Vector2( 1577, 605 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2( 43, 195 )
+amount = 10
+lifetime = 0.6
+preprocess = 1.0
+speed_scale = 3.0
+randomness = 0.14
+texture = SubResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 50, 1 )
+gravity = Vector2( 0, 300 )
+scale_amount = 0.5
+color_ramp = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
