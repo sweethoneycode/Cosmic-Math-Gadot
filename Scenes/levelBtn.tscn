@@ -1,19 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/levelBtn.gd" type="Script" id=1]
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://images/GameUI/answerBox.png" type="Texture" id=3]
-[ext_resource path="res://images/UI.png" type="Texture" id=4]
+[ext_resource path="res://images/Star.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
 outline_color = Color( 1, 0.988235, 0.741176, 1 )
 font_data = ExtResource( 2 )
-
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( -4.3275, -3.4125, 89.3475, 89.3475 )
 
 [node name="0" type="Button"]
 margin_right = 212.0
@@ -45,30 +40,28 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -137.0
 margin_top = -72.0
-margin_right = 138.0
-margin_bottom = 17.0
+margin_right = 2097.0
+margin_bottom = 1976.0
 rect_scale = Vector2( 0.76, 0.76 )
 rect_pivot_offset = Vector2( 137, -1 )
 columns = 4
 
-[node name="1" type="TextureRect" parent="stars"]
+[node name="1" type="Sprite" parent="stars"]
 visible = false
-margin_right = 89.0
-margin_bottom = 89.0
-texture = SubResource( 2 )
+position = Vector2( 40.8316, 49 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 4 )
 
-[node name="2" type="TextureRect" parent="stars"]
+[node name="2" type="Sprite" parent="stars"]
 visible = false
-margin_left = 93.0
-margin_right = 182.0
-margin_bottom = 89.0
-texture = SubResource( 2 )
+position = Vector2( 143.463, 49 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 4 )
 
-[node name="3" type="TextureRect" parent="stars"]
+[node name="3" type="Sprite" parent="stars"]
 visible = false
-margin_left = 93.0
-margin_right = 182.0
-margin_bottom = 89.0
-texture = SubResource( 2 )
+position = Vector2( 246.095, 49 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 4 )
 
 [connection signal="pressed" from="." to="." method="_on_Level_pressed"]

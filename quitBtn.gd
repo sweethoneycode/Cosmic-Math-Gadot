@@ -14,7 +14,7 @@ onready var SettingsMenu := $"%SettingsMenu"
 func _ready():
 	MainMenu.show()
 	_create_or_load_save() #load saved game
-	$"../WindowDialog".popup_centered()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

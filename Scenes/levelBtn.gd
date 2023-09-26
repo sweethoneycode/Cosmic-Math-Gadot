@@ -39,16 +39,38 @@ func checkStage():
 					self.disabled = true
 			currMath = "addition"
 		"-":
-			print (_save.SubtractionComplete)
+			if(!_save.SubtractionComplete.empty()):
+				if(_save.SubtractionComplete.has(currentLevel)):
+					var stars = _save.SubtractionComplete.get(currentLevel)
+					for star in $stars.get_children():
+						if(int(star.name) <= stars):
+							star.show()
+				else:
+					self.disabled = true
 			currMath = "subtraction"
 		"x":
-			print (_save.MultiComplete)
+			if(!_save.MultiComplete.empty()):
+				if(_save.MultiComplete.has(currentLevel)):
+					var stars = _save.MultiComplete.get(currentLevel)
+					for star in $stars.get_children():
+						if(int(star.name) <= stars):
+							star.show()
+				else:
+					self.disabled = true
 			currMath = "multiplication"
 		"÷":
+			if(!_save.DivisionComplete.empty()):
+				if(_save.DivisionComplete.has(currentLevel)):
+					var stars = _save.DivisionComplete.get(currentLevel)
+					for star in $stars.get_children():
+						if(int(star.name) <= stars):
+							star.show()
+				else:
+					self.disabled = true
+					
 			if(self.name == str(0)):
-				self.disabled = true
-				
-			print (_save.DivisionComplete)
+				self.hide()
+
 			currMath = "division"
 		_:
 			currMath = "addition"
@@ -65,5 +87,5 @@ func checkStage():
 
 
 func _on_Level_pressed():
-	PlayerVariables.levelStart = int(self.name)
+	PlayerVariables.levelStart = int(levelNum.text)
 	get_tree().change_scene("res://Scenes/MathStage.tscn")

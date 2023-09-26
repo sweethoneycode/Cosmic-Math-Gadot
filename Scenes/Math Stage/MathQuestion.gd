@@ -31,8 +31,8 @@ func _ready():
 	
 	mathType = PlayerVariables.stage
 	Addend1num = PlayerVariables.levelStart
-	
-	if(mathType == "/"):
+	print(mathType)
+	if(mathType == "÷"):
 		mathType="÷"
 		setDivideNum()
 	else:
@@ -53,7 +53,7 @@ func setDivideNum():
 
 	if(Addend1num < 11):
 		minNum = 1
-		maxNum = 1
+		maxNum = 11
 	else:
 		minNum = 1
 		maxNum = 21
@@ -67,8 +67,9 @@ func setDivideNum():
 			number = num + Addend1num
 		Addend2.append(number)
 	
-	Addend2.shuffle()
+	Addend2.shuffle()	
 	Addend2num = Addend2[0]
+	
 	
 	set_Question()
 	get_answer(Addend2num)
@@ -90,9 +91,10 @@ func setSecondNum():
 	
 		
 	Addend2.shuffle()
-
 	#addend2Txt.text = str(Addend2[0])
 	Addend2num = Addend2[0]
+	
+	
 	set_Question()
 	get_answer(Addend2num)
 
@@ -149,7 +151,7 @@ func _check_answer(check_answer:int):
 func show_answer():
 	
 	answerTxt.show()
-	if(guesses != 5):
+	if(guesses != 10):
 		answerTimer.start()
 	else:
 		stageStars()
