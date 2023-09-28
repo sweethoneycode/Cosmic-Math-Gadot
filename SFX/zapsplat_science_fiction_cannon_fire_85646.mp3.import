@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_science_fiction_cannon_fire_85646.mp3-737d0f25eeba24d892dbf3863b9e236a.mp3str"
+
+[deps]
+
+source_file="res://SFX/zapsplat_science_fiction_cannon_fire_85646.mp3"
+dest_files=[ "res://.import/zapsplat_science_fiction_cannon_fire_85646.mp3-737d0f25eeba24d892dbf3863b9e236a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/transport_space_shuttle_launch_from_distance_rumble.mp3-e588db461fbf99fd415950bc80d5b249.mp3str"
+
+[deps]
+
+source_file="res://SFX/transport_space_shuttle_launch_from_distance_rumble.mp3"
+dest_files=[ "res://.import/transport_space_shuttle_launch_from_distance_rumble.mp3-e588db461fbf99fd415950bc80d5b249.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

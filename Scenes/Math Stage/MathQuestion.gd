@@ -144,17 +144,21 @@ func _check_answer(check_answer:int):
 	if(check_answer == answer):
 		Signals.emit_signal("correctAns")
 		correctSFX.play()
+		
 	else:
+		Signals.emit_signal("incorrect")
 		wrongans += 1
 		wrongSFX.play()
 
 func show_answer():
+	print(guesses)
 	
 	answerTxt.show()
-	if(guesses != 10):
-		answerTimer.start()
-	else:
+	if(guesses == 9):
+		Signals.emit_signal("launch")
 		stageStars()
+	else:
+		answerTimer.start()
 	
 
 func nextAddend():
@@ -186,7 +190,6 @@ func stageStars():
 
 	if (correctAns == 9 || correctAns == 10):
 		starCount = 3;
-		
+	
 	Signals.emit_signal("level_complete", Addend1num, starCount)
-		
 

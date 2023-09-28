@@ -61,7 +61,8 @@ func _saveProgress(stagenum, stars) -> void:
 			_:
 				pass 
 		_save.write_savegame()
-		get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+		Signals.emit_signal("launch")
+		#get_tree().change_scene("res://Scenes/LevelSelect.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
