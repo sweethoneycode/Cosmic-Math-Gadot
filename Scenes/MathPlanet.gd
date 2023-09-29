@@ -31,40 +31,33 @@ func mathPlanet():
 				if(levelStat > 0):
 					levelStat -= 1
 					shipLabel.text = var2str(levelStat)
-			else:
-				_save.AdditionComplete["0"] = 0
-				shipLabel.text = "0"
+
 		"-":
 			if(!_save.SubtractionComplete.empty()):
 				var levelStat = _save.SubtractionComplete.size()
 				if(levelStat > 0):
 					levelStat -= 1
 					shipLabel.text = var2str(levelStat)
-			else:
-				_save.SubtractionComplete["0"] = 0
-				shipLabel.text = "0"
+
 		"x":
 			if(!_save.MultiComplete.empty()):
 				var levelStat = _save.MultiComplete.size()
 				if(levelStat > 0):
 					levelStat -= 1
 					shipLabel.text = var2str(levelStat)
-			else:
-				_save.MultiComplete["0"] = 0
-				shipLabel.text = "0"				
+			
 		"/":
 			mathType = "÷"
 			if(!_save.DivisionComplete.empty()):
 				var levelStat = _save.DivisionComplete.size()
-				if(levelStat > 0):
+				if(levelStat > 1):
 					levelStat -= 1
 					shipLabel.text = var2str(levelStat)
-			else:
-				_save.DivisionComplete["1"] = 0
 				shipLabel.text = "1"
+
 		_:
 			pass
-	_save.write_savegame()		
+
 	planetLabel.text = mathType
 
 func _on_TextureButton_pressed():

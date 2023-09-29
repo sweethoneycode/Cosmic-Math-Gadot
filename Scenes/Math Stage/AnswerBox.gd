@@ -1,11 +1,6 @@
 extends Node2D
 class_name AnswerBox
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var answers = []
 var correctAnswer
 
@@ -45,16 +40,16 @@ func _incorrect():
 		#answerbo3Part.emitting = true
 		answer3Anim.play("explode")
 		
-func correctAnswer():
-	if(answerbox1.text == str(correctAnswer)):
+func correctAnswer(answer:int):
+	if(answerbox1.text == str(answer)):
 	#	answerbo1Part.emitting = true
 		answer1Anim.play("correct")
 		
-	if(answerbox2.text == str(correctAnswer)):
+	if(answerbox2.text == str(answer)):
 		#answerbo2Part.emitting = true
 		answer2Anim.play("correct")
 		
-	if(answerbox3.text == str(correctAnswer)):
+	if(answerbox3.text == str(answer)):
 		#answerbo3Part.emitting = true
 		answer3Anim.play("correct")
 

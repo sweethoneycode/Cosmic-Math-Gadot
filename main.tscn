@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://images/GameUI/cosmic-space-graphic-logo.png" type="Texture" id=1]
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
@@ -61,6 +61,38 @@ expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.992157, 0.705882, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="DynamicFont" id=10]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.705882, 0.984314, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 1, 0.992157, 0.705882, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -165,9 +197,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -125.5
-margin_top = 214.0
+margin_top = -109.0
 margin_right = 325.5
-margin_bottom = 303.0
+margin_bottom = -20.0
 rect_pivot_offset = Vector2( 127, 44 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -176,6 +208,27 @@ custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 9 )
 custom_styles/normal = SubResource( 2 )
 text = "Privacy Policy"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ClearProgress" type="Button" parent="SettingsMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -141.5
+margin_top = 35.0
+margin_right = 333.5
+margin_bottom = 124.0
+rect_pivot_offset = Vector2( 127, 44 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "Clear Progress"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -295,7 +348,23 @@ stream = ExtResource( 8 )
 volume_db = -15.387
 autoplay = true
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -137.0
+margin_top = -35.0
+margin_right = 137.0
+margin_bottom = 35.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 140.5, 34.5 )
+dialog_text = "You Are About to Lose All your Progress!"
+
 [connection signal="pressed" from="quitBtn" to="quitBtn" method="_on_quitBtn_pressed"]
 [connection signal="pressed" from="SettingsMenu/PrivacyBtn" to="quitBtn" method="_on_PrivacyBtn_pressed"]
+[connection signal="pressed" from="SettingsMenu/ClearProgress" to="quitBtn" method="_on_ClearProgress_pressed"]
 [connection signal="pressed" from="Menu/Play" to="quitBtn" method="_on_Play_pressed"]
 [connection signal="pressed" from="Menu/SettingsBtn" to="quitBtn" method="_on_SettingsBtn_pressed"]
+[connection signal="confirmed" from="ConfirmationDialog" to="quitBtn" method="_on_ConfirmationDialog_confirmed"]

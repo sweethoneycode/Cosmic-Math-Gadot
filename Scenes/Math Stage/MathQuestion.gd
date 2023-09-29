@@ -142,7 +142,7 @@ func _check_answer(check_answer:int):
 	guesses += 1
 	
 	if(check_answer == answer):
-		Signals.emit_signal("correctAns")
+		Signals.emit_signal("correctAns", answer)
 		correctSFX.play()
 		
 	else:
