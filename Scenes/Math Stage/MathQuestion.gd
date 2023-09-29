@@ -31,7 +31,7 @@ func _ready():
 	
 	mathType = PlayerVariables.stage
 	Addend1num = PlayerVariables.levelStart
-	print(mathType)
+
 	if(mathType == "÷"):
 		mathType="÷"
 		setDivideNum()

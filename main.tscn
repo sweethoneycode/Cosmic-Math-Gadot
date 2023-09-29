@@ -1,14 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://images/GameUI/cosmic-space-graphic-logo.png" type="Texture" id=1]
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://quitBtn.gd" type="Script" id=3]
-[ext_resource path="res://images/Planets/addition.png" type="Texture" id=4]
-[ext_resource path="res://images/Planets/division.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/MathPlanet.tscn" type="PackedScene" id=6]
-[ext_resource path="res://images/Planets/multiplication.png" type="Texture" id=7]
 [ext_resource path="res://Music/track_1.wav" type="AudioStream" id=8]
 [ext_resource path="res://images/GameUI/planet_01.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/SettingsMenu.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -44,11 +41,7 @@ expand_margin_right = 8.0
 expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
-[sub_resource type="DynamicFont" id=3]
-size = 108
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.705882, 0.984314, 1, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -76,85 +69,12 @@ expand_margin_right = 8.0
 expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
-[sub_resource type="DynamicFont" id=10]
-size = 60
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.705882, 0.984314, 1, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 10
-corner_radius_bottom_right = 10
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 1, 0.792157, 0.376471, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 10
-corner_radius_bottom_right = 10
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.705882, 0.984314, 1, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 10
-corner_radius_bottom_right = 10
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="DynamicFont" id=14]
-size = 18
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="Theme" id=13]
-default_font = SubResource( 14 )
-
 [node name="Node2D" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
-[node name="space" type="Node2D" parent="."]
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="space"]
-position = Vector2( 982, 585 )
-amount = 300
-lifetime = 44.96
-preprocess = 300.0
-speed_scale = 0.1
-randomness = 0.5
-lifetime_randomness = 0.5
-emission_shape = 2
-emission_rect_extents = Vector2( 1920, 1080 )
-direction = Vector2( 0, 0.5 )
-gravity = Vector2( 0, 1 )
-scale_amount = 3.0
-hue_variation = 0.5
-hue_variation_random = 0.5
 
 [node name="Default" type="Sprite" parent="."]
 unique_name_in_owner = true
@@ -179,76 +99,10 @@ custom_styles/normal = SubResource( 4 )
 text = "Exit"
 script = ExtResource( 3 )
 
-[node name="SettingsMenu" type="Control" parent="."]
-unique_name_in_owner = true
-margin_left = 836.5
-margin_top = 420.0
-margin_right = 876.5
-margin_bottom = 460.0
-
-[node name="RichTextLabel" type="Label" parent="SettingsMenu"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -94.5
-margin_top = -296.0
-margin_right = 315.5
-margin_bottom = -168.0
-rect_pivot_offset = Vector2( 171.5, 60 )
-focus_mode = 2
-custom_fonts/font = SubResource( 3 )
-text = "Settings"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="PrivacyBtn" type="Button" parent="SettingsMenu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -125.5
-margin_top = -109.0
-margin_right = 325.5
-margin_bottom = -20.0
-rect_pivot_offset = Vector2( 127, 44 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/normal = SubResource( 2 )
-text = "Privacy Policy"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="ClearProgress" type="Button" parent="SettingsMenu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -148.5
-margin_top = 49.0
-margin_right = 348.5
-margin_bottom = 140.0
-rect_pivot_offset = Vector2( 127, 44 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 10 )
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-text = "Clear Progress"
-__meta__ = {
-"_editor_description_": ""
-}
+[node name="SettingsMenu" parent="." instance=ExtResource( 10 )]
 
 [node name="Menu" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -315,63 +169,6 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="Planets" type="Node2D" parent="."]
-visible = false
-
-[node name="Division" parent="Planets" instance=ExtResource( 6 )]
-margin_left = 1316.0
-margin_top = 623.0
-margin_right = 1316.48
-margin_bottom = 623.0
-mathType = "/"
-planetImg = ExtResource( 5 )
-planetSpeed = 3
-
-[node name="Multiplication" parent="Planets" instance=ExtResource( 6 )]
-margin_left = 263.0
-margin_top = 682.0
-margin_right = 263.48
-margin_bottom = 682.0
-rect_scale = Vector2( 0.800001, 0.8 )
-mathType = "x"
-planetImg = ExtResource( 7 )
-
-[node name="Subtraction" parent="Planets" instance=ExtResource( 6 )]
-margin_left = 1363.0
-margin_top = 152.0
-margin_right = 1363.48
-margin_bottom = 152.0
-rect_scale = Vector2( 0.600005, 0.64 )
-mathType = "-"
-
-[node name="Addition" parent="Planets" instance=ExtResource( 6 )]
-anchor_left = 0.118
-anchor_top = 0.139
-anchor_right = 0.274
-anchor_bottom = 0.417
-margin_left = 227.0
-margin_top = 150.0
-margin_right = 227.48
-margin_bottom = 150.0
-planetImg = ExtResource( 4 )
-planetSpeed = 0
-
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -302.0
-margin_top = -34.0
-margin_right = 42.0
-margin_bottom = 69.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( -1.625, -2.125 )
-rect_clip_content = true
-theme = SubResource( 13 )
-dialog_text = "You Are About to Lose All your Progress!"
-dialog_hide_on_ok = false
-
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 960, 541 )
 stream = ExtResource( 8 )
@@ -379,8 +176,5 @@ volume_db = -15.387
 autoplay = true
 
 [connection signal="pressed" from="quitBtn" to="quitBtn" method="_on_quitBtn_pressed"]
-[connection signal="pressed" from="SettingsMenu/PrivacyBtn" to="quitBtn" method="_on_PrivacyBtn_pressed"]
-[connection signal="pressed" from="SettingsMenu/ClearProgress" to="quitBtn" method="_on_ClearProgress_pressed"]
 [connection signal="pressed" from="Menu/Play" to="quitBtn" method="_on_Play_pressed"]
 [connection signal="pressed" from="Menu/SettingsBtn" to="quitBtn" method="_on_SettingsBtn_pressed"]
-[connection signal="confirmed" from="ConfirmationDialog" to="quitBtn" method="_on_ConfirmationDialog_confirmed"]

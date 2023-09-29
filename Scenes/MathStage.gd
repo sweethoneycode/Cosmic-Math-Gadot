@@ -12,7 +12,10 @@ var mathType = "+"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerVariables.currScene = "MathStage"
+	
 	mathType = PlayerVariables.stage
+		
 	pickBckgrnd()
 	Signals.connect("level_complete", self, "_saveProgress")
 	_save = SaveGame.load_savegame()

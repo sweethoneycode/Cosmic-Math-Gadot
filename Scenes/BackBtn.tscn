@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/GameUI/Back.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/BackBtn.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackBtn" type="TextureButton" parent="."]
+margin_left = 2.00018
+margin_top = 1.00006
+margin_right = 2050.0
+margin_bottom = 2049.0
+rect_scale = Vector2( 0.134832, 0.134832 )
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="BackBtn" to="BackBtn" method="_on_BackBtn_pressed"]
