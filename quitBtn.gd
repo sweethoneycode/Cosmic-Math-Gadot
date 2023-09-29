@@ -47,22 +47,7 @@ func _on_SettingsBtn_pressed():
 	
 func _create_or_load_save() -> void:
 	if SaveGame.save_exists():
-		_save = SaveGame.load_savegame()
-		
-			
-		if(_save.AdditionComplete.empty()):
-			_save.AdditionComplete["0"] = 0
-			_save.write_savegame()							
-		if(_save.SubtractionComplete.empty()):
-			_save.SubtractionComplete["0"] = 0
-			_save.write_savegame()		
-		if(_save.MultiComplete.empty()):
-			_save.MultiComplete["0"] = 0
-			_save.write_savegame()		
-		if(_save.DivisionComplete.empty()):
-			_save.DivisionComplete["1"] = 0
-			_save.write_savegame()	
-		
+		_save = SaveGame.load_savegame()	
 	else:
 		_save = SaveGame.new()
 		_save.AdditionComplete["0"] = 0
@@ -71,15 +56,23 @@ func _create_or_load_save() -> void:
 		_save.DivisionComplete["1"] = 0
 		_save.write_savegame()
 
-
 func _on_ClearProgress_pressed():
 
 	ConFirmDiag.popup_centered()
 
 
 func _on_ConfirmationDialog_confirmed():
+	
 	_save.AdditionComplete.clear()
 	_save.SubtractionComplete.clear()
 	_save.MultiComplete.clear()
 	_save.DivisionComplete.clear()
+	
+	_save.AdditionComplete["0"] = 0
+	_save.SubtractionComplete["0"] = 0
+	_save.MultiComplete["0"] = 0
+	_save.DivisionComplete["1"] = 0
 	_save.write_savegame()
+
+
+	ConFirmDiag.hide()
