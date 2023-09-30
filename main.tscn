@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://images/GameUI/cosmic-space-graphic-logo.png" type="Texture" id=1]
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://quitBtn.gd" type="Script" id=3]
 [ext_resource path="res://Music/track_1.wav" type="AudioStream" id=8]
 [ext_resource path="res://images/GameUI/planet_01.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/SettingsMenu.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -78,8 +77,8 @@ __meta__ = {
 
 [node name="Default" type="Sprite" parent="."]
 unique_name_in_owner = true
-position = Vector2( 908, 366 )
-scale = Vector2( 0.699906, 0.699906 )
+position = Vector2( 978, 453 )
+scale = Vector2( 0.572618, 0.572618 )
 texture = ExtResource( 9 )
 
 [node name="quitBtn" type="Button" parent="."]
@@ -98,8 +97,6 @@ custom_styles/hover = SubResource( 6 )
 custom_styles/normal = SubResource( 4 )
 text = "Exit"
 script = ExtResource( 3 )
-
-[node name="SettingsMenu" parent="." instance=ExtResource( 10 )]
 
 [node name="Menu" type="Control" parent="."]
 unique_name_in_owner = true

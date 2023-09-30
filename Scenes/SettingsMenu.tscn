@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/SettingsMenu.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/BackBtn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/GameUI/planet_01.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=3]
 size = 108
@@ -82,16 +84,23 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=15]
 default_font = SubResource( 14 )
 
-[node name="SettingsMenu" type="Control"]
+[node name="Node2D" type="Node2D"]
+
+[node name="Default" type="Sprite" parent="."]
 unique_name_in_owner = true
-visible = false
+position = Vector2( 908, 366 )
+scale = Vector2( 0.699906, 0.699906 )
+texture = ExtResource( 4 )
+
+[node name="SettingsMenu" type="Control" parent="."]
+unique_name_in_owner = true
 margin_left = 836.5
 margin_top = 420.0
 margin_right = 876.5
 margin_bottom = 460.0
 script = ExtResource( 2 )
 
-[node name="RichTextLabel" type="Label" parent="."]
+[node name="RichTextLabel" type="Label" parent="SettingsMenu"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -94.5
@@ -106,7 +115,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="PrivacyBtn" type="Button" parent="."]
+[node name="PrivacyBtn" type="Button" parent="SettingsMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -127,7 +136,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="ClearProgress" type="Button" parent="."]
+[node name="ClearProgress" type="Button" parent="SettingsMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -151,7 +160,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="SettingsMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -167,5 +176,7 @@ theme = SubResource( 15 )
 dialog_text = "You Are About to Lose All your Progress!"
 dialog_hide_on_ok = false
 
-[connection signal="pressed" from="PrivacyBtn" to="." method="_on_PrivacyBtn_pressed"]
-[connection signal="pressed" from="ClearProgress" to="." method="_on_ClearProgress_pressed"]
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="SettingsMenu/PrivacyBtn" to="SettingsMenu" method="_on_PrivacyBtn_pressed"]
+[connection signal="pressed" from="SettingsMenu/ClearProgress" to="SettingsMenu" method="_on_ClearProgress_pressed"]

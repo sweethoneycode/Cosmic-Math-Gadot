@@ -14,4 +14,5 @@ func _on_BackBtn_pressed():
 			get_tree().change_scene("res://Scenes/LevelSelect.tscn")
 		"Planets":
 			get_tree().change_scene("res://main.tscn")
-			
+		"Settings":
+			get_tree().change_scene("res://main.tscn")	

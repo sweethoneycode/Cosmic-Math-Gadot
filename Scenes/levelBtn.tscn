@@ -8,6 +8,8 @@
 [sub_resource type="DynamicFont" id=1]
 size = 100
 outline_color = Color( 1, 0.988235, 0.741176, 1 )
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="0" type="Button"]

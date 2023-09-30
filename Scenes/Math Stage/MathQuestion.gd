@@ -132,10 +132,10 @@ func set_Question():
 		addend1Txt.text = str(Addend1num)
 		addend2Txt.text = str(Addend2num)
 		
-func set_Answer(answer:int):
+func set_Answer(Setanswer:int):
 
-	answerTxt.text = str(answer)
-	Signals.emit_signal("get_answers", answer)
+	answerTxt.text = str(Setanswer)
+	Signals.emit_signal("get_answers", Setanswer)
 	
 func _check_answer(check_answer:int):
 	show_answer()

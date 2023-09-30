@@ -13,24 +13,11 @@ onready var SettingsMenu := $"%SettingsMenu"
 func _ready():
 	
 	_create_or_load_save() #load saved game
-	
-	MainMenu.show()
 
 func _on_quitBtn_pressed():
-	
-	if (self.text != "Back"):
-		get_tree().quit()
-		
-	if (self.text == "Back"):
-		DefaultIMG.show()
-		SettingsMenu.hide()
-		MainMenu.show()
-	
-	self.text = "Exit"
+	get_tree().quit()
 
 func _on_Play_pressed():
-	DefaultIMG.hide()
-	self.text = "Back"
 	get_tree().change_scene("res://Scenes/Planets.tscn")
 
 
@@ -39,9 +26,8 @@ func _on_PrivacyBtn_pressed():
 	OS.shell_open("http://sweethoneycode.com/cosmic-math-app-privacy/")
 
 func _on_SettingsBtn_pressed():
-	self.text = "Back"
-	MainMenu.hide()
-	SettingsMenu.show()
+
+	get_tree().change_scene("res://Scenes/SettingsMenu.tscn")	
 	
 func _create_or_load_save() -> void:
 	if SaveGame.save_exists():
