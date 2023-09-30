@@ -2,11 +2,11 @@ extends Control
 
 var _save: SaveGame
 
-onready var ConFirmDiag := $ConfirmationDialog
+onready var ConFirmDiag := $"%ConfirmationDialog"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerVariables.currScene = "Settings"
-	PlayerVariables.currScene = "Settings"
+	_create_or_load_save()
 	
 func _on_SettingsBtn_pressed():
 	self.text = "Back"

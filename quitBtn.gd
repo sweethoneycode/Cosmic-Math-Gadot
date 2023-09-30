@@ -7,11 +7,10 @@ var _save: SaveGame
 
 onready var DefaultIMG := $"%Default"
 onready var MainMenu := $"%Menu"
-onready var SettingsMenu := $"%SettingsMenu"
+onready var SettingsMenu := $"../Menu/SettingsBtn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	_create_or_load_save() #load saved game
 
 func _on_quitBtn_pressed():
