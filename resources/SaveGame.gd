@@ -30,10 +30,12 @@ export var version := 1
 export var levels: Resource
 
 
-export var AdditionComplete:= {}
-export var SubtractionComplete:= {}
-export var MultiComplete:= {}
-export var DivisionComplete:= {}
+export var AdditionComplete:= []
+export var SubtractionComplete:= []
+export var MultiComplete:= []
+export var DivisionComplete:= []
+
+export var PlayerSaves := {}
 
 # The next three functions are just to keep the save API inside of the SaveGame resource.
 # Note that this has safety issues if players download savegame files from the 
