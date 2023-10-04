@@ -30,10 +30,10 @@ export var version := 1
 export var levels: Resource
 
 
-export var AdditionComplete:= []
-export var SubtractionComplete:= []
-export var MultiComplete:= []
-export var DivisionComplete:= []
+export var AdditionComplete:= {}
+export var SubtractionComplete:= {}
+export var MultiComplete:= {}
+export var DivisionComplete:= {}
 
 export var PlayerSaves := {}
 

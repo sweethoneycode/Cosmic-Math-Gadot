@@ -15,18 +15,12 @@ _global_script_classes=[ {
 "path": "res://Scenes/Math Stage/AnswerBox.gd"
 }, {
 "base": "Resource",
-"class": "CompletedLevels",
-"language": "GDScript",
-"path": "res://resources/CompletedLevels.gd"
-}, {
-"base": "Resource",
 "class": "SaveGame",
 "language": "GDScript",
 "path": "res://resources/SaveGame.gd"
 } ]
 _global_script_class_icons={
 "AnswerBox": "",
-"CompletedLevels": "",
 "SaveGame": ""
 }
 

@@ -28,6 +28,7 @@ func _ready():
 #func _ready():
 #	pass
 func _incorrect():
+	disBtn()
 	if(answerbox1.text != str(correctAnswer)):
 	#	answerbo1Part.emitting = true
 		answer1Anim.play("explode")
@@ -41,6 +42,9 @@ func _incorrect():
 		answer3Anim.play("explode")
 		
 func correctAnswer(answer:int):
+	disBtn()
+	_incorrect()
+	
 	if(answerbox1.text == str(answer)):
 	#	answerbo1Part.emitting = true
 		answer1Anim.play("correct")
@@ -54,8 +58,10 @@ func correctAnswer(answer:int):
 		answer3Anim.play("correct")
 
 func _get_answers(answer:int):
+	
 	answers.clear()
-
+	disBtn()
+	
 	answers.append(answer)
 	
 	for _i in range(2):
@@ -70,16 +76,28 @@ func _get_answers(answer:int):
 	if answers.size() == 3:
 		displayAnswers()
 
-
+func newBTN():
+	$Box1/AnimationPlayer.play("new box")
+	$Box2/AnimationPlayer.play("new box")
+	$Box3/AnimationPlayer.play("new box")
+	
+func disBtn():
+		$Box1/Button.disabled = true
+		$Box2/Button.disabled = true
+		$Box3/Button.disabled = true
+		
 func displayAnswers():
-
-		$Box1/Button.disabled = false
-		$Box2/Button.disabled = false
-		$Box3/Button.disabled = false
+		
+#		$Box1/Button.visible = false
+#		$Box2/Button.visible = false
+#		$Box3/Button.visible = false
+		
+		newBTN()
 		
 		answerbox1.text = str(answers[0])
 		answerbox2.text = str(answers[1])
 		answerbox3.text = str(answers[2])
+		
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/SettingsMenu.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/BackBtn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://images/GameUI/planet_01.png" type="Texture" id=4]
+[ext_resource path="res://images/icons8-link-100.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=3]
 size = 108
@@ -125,13 +126,18 @@ margin_top = -109.0
 margin_right = 325.5
 margin_bottom = -20.0
 rect_pivot_offset = Vector2( 127, 44 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 9 )
 custom_styles/normal = SubResource( 2 )
 text = "Privacy Policy"
+icon = ExtResource( 5 )
+icon_align = 2
+expand_icon = true
 __meta__ = {
 "_editor_description_": ""
 }
@@ -146,9 +152,11 @@ margin_top = 49.0
 margin_right = 348.5
 margin_bottom = 140.0
 rect_pivot_offset = Vector2( 127, 44 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 10 )
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 11 )
