@@ -5,8 +5,8 @@ onready var answerLbl := $Button/Label
 onready var animPlayer := $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	animPlayer.play("idle")
+#func _ready():
+
 
 func _on_Button_pressed():
 
