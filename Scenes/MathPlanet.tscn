@@ -3,13 +3,11 @@
 [ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/planetSprite.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/MathPlanet.gd" type="Script" id=3]
-[ext_resource path="res://images/Ships/UFO.png" type="Texture" id=4]
+[ext_resource path="res://images/GameUI/answerBox.png" type="Texture" id=4]
 [ext_resource path="res://images/Planets/addition.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=2]
 size = 90
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
@@ -46,21 +44,27 @@ margin_right = 200.0
 margin_bottom = 200.0
 stretch_mode = 1
 
-[node name="StageUFO" type="Control" parent="."]
-margin_left = 74.0
-margin_top = 34.0
-margin_right = 114.0
-margin_bottom = 74.0
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = -79.0
+margin_top = -36.0
+margin_right = 373.0
+margin_bottom = 389.0
 
-[node name="TextureRect2" type="TextureRect" parent="StageUFO"]
-margin_left = 180.0
-margin_top = 81.0
-margin_right = 314.0
-margin_bottom = 158.0
+[node name="StageUFO" type="Control" parent="TextureButton"]
+margin_left = 153.0
+margin_top = 70.0
+margin_right = 193.0
+margin_bottom = 110.0
+
+[node name="TextureRect2" type="TextureRect" parent="TextureButton/StageUFO"]
+margin_left = 185.0
+margin_top = 44.0
+margin_right = 319.0
+margin_bottom = 189.0
 texture = ExtResource( 4 )
 expand = true
 
-[node name="ShipLabel" type="Label" parent="StageUFO"]
+[node name="ShipLabel" type="Label" parent="TextureButton/StageUFO"]
 unique_name_in_owner = true
 anchor_left = 0.825
 anchor_top = 1.24
@@ -70,13 +74,14 @@ margin_left = 168.0
 margin_top = -6.6
 margin_right = 272.0
 margin_bottom = 148.4
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 3
 custom_fonts/font = SubResource( 2 )
 text = "20"
 align = 1
 valign = 1
 
-[node name="PlanetLabel" type="Label" parent="StageUFO"]
+[node name="PlanetLabel" type="Label" parent="TextureButton/StageUFO"]
 unique_name_in_owner = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -93,11 +98,5 @@ custom_fonts/font = SubResource( 1 )
 text = "+"
 align = 1
 valign = 1
-
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = -82.0
-margin_top = -44.0
-margin_right = 370.0
-margin_bottom = 381.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
