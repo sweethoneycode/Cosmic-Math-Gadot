@@ -12,34 +12,6 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.662745, 0.25098, 0.25098, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 10
-corner_radius_bottom_right = 10
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.85098, 0.447059, 0.447059, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 10
-corner_radius_bottom_right = 10
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.705882, 0.984314, 1, 1 )
 border_width_left = 2
@@ -68,6 +40,34 @@ expand_margin_right = 8.0
 expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.662745, 0.25098, 0.25098, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.85098, 0.447059, 0.447059, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
 [node name="Node2D" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -76,31 +76,11 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Default" type="Sprite" parent="."]
+[node name="bkgrnd" type="Sprite" parent="."]
 unique_name_in_owner = true
-position = Vector2( 978, 453 )
-scale = Vector2( 0.572618, 0.572618 )
+position = Vector2( 966, 415 )
+scale = Vector2( 0.543704, 0.543704 )
 texture = ExtResource( 9 )
-
-[node name="quitBtn" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -122.0
-margin_top = -303.0
-margin_right = 130.0
-margin_bottom = -199.0
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/normal = SubResource( 4 )
-text = "Exit"
-script = ExtResource( 3 )
 
 [node name="Menu" type="Control" parent="."]
 unique_name_in_owner = true
@@ -108,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -123.5
+margin_left = -123.0
 margin_top = -120.0
-margin_right = 123.5
-margin_bottom = 109.0
+margin_right = 124.0
+margin_bottom = 90.0
 
 [node name="Play" type="Button" parent="Menu"]
 margin_left = 2.0
@@ -175,12 +155,32 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
+[node name="quitBtn" type="Button" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = 128.0
+margin_right = 130.0
+margin_bottom = 232.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 4 )
+text = "Exit"
+script = ExtResource( 3 )
+
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 960, 541 )
 stream = ExtResource( 8 )
 volume_db = -15.387
 autoplay = true
 
-[connection signal="pressed" from="quitBtn" to="quitBtn" method="_on_quitBtn_pressed"]
-[connection signal="pressed" from="Menu/Play" to="quitBtn" method="_on_Play_pressed"]
-[connection signal="pressed" from="Menu/SettingsBtn" to="quitBtn" method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="Menu/Play" to="Menu/quitBtn" method="_on_Play_pressed"]
+[connection signal="pressed" from="Menu/SettingsBtn" to="Menu/quitBtn" method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="Menu/quitBtn" to="Menu/quitBtn" method="_on_quitBtn_pressed"]
