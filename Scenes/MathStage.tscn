@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/BackBtn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Math Stage/AnswerBox.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://images/Planets/addition_surface.png" type="Texture" id=9]
 [ext_resource path="res://images/Planets/Multiplication_planet.png" type="Texture" id=10]
 [ext_resource path="res://images/questionBoard.png" type="Texture" id=11]
+[ext_resource path="res://Aliens/squarealien.tscn" type="PackedScene" id=12]
 
 [node name="MathStage" type="Node2D"]
 script = ExtResource( 6 )
@@ -21,7 +22,6 @@ scale = Vector2( 0.786182, 0.783722 )
 
 [node name="Additionbckgrnd" type="Sprite" parent="bckgrounds"]
 unique_name_in_owner = true
-visible = false
 texture = ExtResource( 4 )
 
 [node name="Subtractionbckgrnd" type="Sprite" parent="bckgrounds"]
@@ -69,3 +69,7 @@ visible = false
 position = Vector2( 956, 535 )
 scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 5 )
+
+[node name="SquareAlien" parent="." instance=ExtResource( 12 )]
+position = Vector2( 905, 442 )
+scale = Vector2( 0.790552, 0.790552 )

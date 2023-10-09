@@ -273,7 +273,6 @@ script = ExtResource( 3 )
 
 [node name="smoke" type="CPUParticles2D" parent="Rocket"]
 position = Vector2( 48.8901, 117.963 )
-emitting = false
 amount = 5
 lifetime = 2.0
 preprocess = 10.0
@@ -288,6 +287,7 @@ scale_amount_random = 0.12
 
 [node name="firePart" type="CPUParticles2D" parent="Rocket"]
 position = Vector2( 51, 118 )
+emitting = false
 amount = 80
 lifetime = 2.0
 preprocess = 50.0
@@ -306,6 +306,7 @@ hue_variation_random = 1.0
 
 [node name="smoke2" type="CPUParticles2D" parent="Rocket"]
 position = Vector2( 52.1683, 331.246 )
+emitting = false
 amount = 25
 lifetime = 2.0
 preprocess = 10.0
