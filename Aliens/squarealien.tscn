@@ -387,7 +387,7 @@ rest = Transform2D( 1, 0, 0, 1, 4.65039, -71.9609 )
 
 [node name="left-leg" type="Bone2D" parent="Skeleton2D/base"]
 position = Vector2( -56.9886, -1.51495 )
-rotation = 0.198719
+rotation = 0.19872
 rest = Transform2D( 1, 0, 0, 1, -56.9886, -1.51495 )
 __meta__ = {
 "_edit_ik_": true
