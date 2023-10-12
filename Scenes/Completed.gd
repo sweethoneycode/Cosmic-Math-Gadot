@@ -18,7 +18,7 @@ func _ready():
 
 func showStars():
 	if stars > 0:
-		SoundManager.play_se("Star")
+		
 		for star in StageStars.get_children():
 			if(int(star.name) == starCount):
 				star.show()
@@ -36,6 +36,7 @@ func next_stage():
 
 func _on_Timer_timeout():
 	starCount = starCount + 1
+	SoundManager.play_se("Star")
 	showStars()
 
 
