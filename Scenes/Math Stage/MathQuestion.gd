@@ -6,9 +6,6 @@ onready var addend2Txt := $"%Num2"
 onready var answerTxt := $"%AnswerNum"
 onready var answerTimer := $"%answerTimer"
 
-onready var correctSFX := $"%CorrectSFX"
-onready var wrongSFX := $"%WrongSFX"
-
 var Addend2 = []
 var answer = 0
 
@@ -143,12 +140,12 @@ func _check_answer(check_answer:int):
 	
 	if(check_answer == answer):
 		Signals.emit_signal("correctAns", answer)
-		correctSFX.play()
+		
 		
 	else:
 		Signals.emit_signal("incorrect")
 		wrongans += 1
-		wrongSFX.play()
+
 
 func show_answer():
 	print(guesses)

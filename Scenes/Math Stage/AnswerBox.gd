@@ -29,6 +29,7 @@ func _ready():
 #	pass
 func _incorrect():
 	disBtn()
+	SoundManager.play_se("Incorrect")
 	if(answerbox1.text != str(correctAnswer)):
 	#	answerbo1Part.emitting = true
 		answer1Anim.play("explode")
@@ -45,6 +46,8 @@ func correctAnswer(answer:int):
 	disBtn()
 	_incorrect()
 	
+	correctSFX()
+	
 	if(answerbox1.text == str(answer)):
 	#	answerbo1Part.emitting = true
 		answer1Anim.play("correct")
@@ -56,6 +59,9 @@ func correctAnswer(answer:int):
 	if(answerbox3.text == str(answer)):
 		#answerbo3Part.emitting = true
 		answer3Anim.play("correct")
+
+func correctSFX():
+	SoundManager.play_se("Correct")
 
 func _get_answers(answer:int):
 	
