@@ -137,10 +137,10 @@ func set_Answer(Setanswer:int):
 func _check_answer(check_answer:int):
 	show_answer()
 	guesses += 1
-	
+	Signals.emit_signal("countdown")
 	if(check_answer == answer):
 		Signals.emit_signal("correctAns", answer)
-		
+		correctAns += 1
 		
 	else:
 		Signals.emit_signal("incorrect")
@@ -148,12 +148,12 @@ func _check_answer(check_answer:int):
 
 
 func show_answer():
-	print(guesses)
-	
+	stageStars()
 	answerTxt.show()
 	if(guesses == 9):
 		Signals.emit_signal("launch")
-		stageStars()
+		
+		Signals.emit_signal("level_complete", Addend1num)
 	else:
 		answerTimer.start()
 	
@@ -177,16 +177,17 @@ func _on_answerTimer_timeout():
 
 func stageStars():
 	
-	correctAns = guesses - wrongans
+	#correctAns = guesses - wrongans
 	
-	if (correctAns >= 4):
+	if (correctAns >= 3):
 		starCount = 1;
-		
-	if (correctAns >= 5 && correctAns <= 8):
+		Signals.emit_signal("starReward",1)
+	if (correctAns >= 5 && correctAns <= 7):
 		starCount = 2;
-
-	if (correctAns == 9 || correctAns == 10):
+		Signals.emit_signal("starReward",2)
+	if (correctAns >= 8):
 		starCount = 3;
+		Signals.emit_signal("starReward",3)
 	
-	Signals.emit_signal("level_complete", Addend1num, starCount)
+	
 

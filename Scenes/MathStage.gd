@@ -3,19 +3,22 @@ extends Node2D
 var _save: SaveGame
 
 var wrongAnswers: int = 0
+var countDownInt := 10
+var mathType = "+"
+
 onready var additionIMG := $"%Additionbckgrnd"
 onready var subtrationIMG := $"%Subtractionbckgrnd"
 onready var MultiplicationIMG := $"%Multiplicationbckgrnd"
 onready var DivisionIMG := $"%Divisionbckgrnd"
-onready var rocketAnim := $Rocket/AnimationPlayer
 
-var mathType = "+"
+onready var rocketAnim := $Rocket/AnimationPlayer
+onready var countdownLbl := $Countdown
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SoundManager.stop("Space")
 	SoundManager.play_bgm("Stage")
-	
+	Signals.connect("countdown", self, "countDown")
 	
 	PlayerVariables.currScene = "MathStage"
 	mathType = PlayerVariables.stage
@@ -23,7 +26,14 @@ func _ready():
 	pickBckgrnd()
 	Signals.connect("level_complete", self, "_saveProgress")
 	_save = SaveGame.load_savegame()
-
+	
+func countDown():
+	if(countDownInt > 1):
+		countDownInt -= 1
+		countdownLbl.text = str(countDownInt)
+	else:
+		countdownLbl.hide()
+		
 func pickBckgrnd():
 	
 		match mathType:
@@ -39,8 +49,8 @@ func pickBckgrnd():
 				pass
 			
 			
-func _saveProgress(stagenum, stars) -> void:
-	PlayerVariables.stageStars = stars
+func _saveProgress(stagenum) -> void:
+	var stars = PlayerVariables.stageStars
 	match mathType:
 		"+":
 			if(stars >= _save.AdditionComplete[str(stagenum)]):

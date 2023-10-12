@@ -8,9 +8,10 @@ signal incorrect()
 signal check_answer(answer)
 signal set_answer(answer)
 signal show_answer()
-signal level_complete(level, stars)
+signal level_complete(level)
 signal launch()
-
+signal countdown()
+signal starReward()
 
 #signal on_score_increment(amount)
 #signal start_game()
