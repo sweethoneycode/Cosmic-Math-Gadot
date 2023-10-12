@@ -1,15 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/BackBtn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Math Stage/AnswerBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Math Stage/MathQuestion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://images/Planets/addition_planet.png" type="Texture" id=4]
+[ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Scenes/MathStage.gd" type="Script" id=6]
 [ext_resource path="res://images/Planets/Subtraction_Planet.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Rocket.tscn" type="PackedScene" id=8]
 [ext_resource path="res://images/Planets/addition_surface.png" type="Texture" id=9]
 [ext_resource path="res://images/Planets/Multiplication_planet.png" type="Texture" id=10]
 [ext_resource path="res://images/questionBoard.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="MathStage" type="Node2D"]
 script = ExtResource( 6 )
@@ -40,6 +49,19 @@ visible = false
 position = Vector2( 167.9, -19.1394 )
 texture = ExtResource( 9 )
 
+[node name="RichTextLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 274.0
+margin_top = 52.0
+margin_right = 1138.0
+margin_bottom = 170.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 1 )
+text = "Launch The Rocket!"
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 716, 372 )
 scale = Vector2( 2.06101, 1.36875 )
@@ -61,4 +83,4 @@ __meta__ = {
 }
 
 [node name="Rocket" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1663, 605 )
+position = Vector2( 1508, 605 )
