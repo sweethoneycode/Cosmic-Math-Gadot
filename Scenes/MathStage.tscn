@@ -50,6 +50,7 @@ position = Vector2( 167.9, -19.1394 )
 texture = ExtResource( 9 )
 
 [node name="RichTextLabel" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 274.0
@@ -83,4 +84,4 @@ __meta__ = {
 }
 
 [node name="Rocket" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1508, 605 )
+position = Vector2( 1534, 605 )
