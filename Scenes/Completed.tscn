@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Rocket.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Completed.gd" type="Script" id=2]
+[ext_resource path="res://images/Star.png" type="Texture" id=3]
+
+[node name="Finished" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="space" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="space"]
+position = Vector2( 982, 585 )
+amount = 300
+lifetime = 44.96
+preprocess = 300.0
+speed_scale = 0.1
+randomness = 0.5
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_rect_extents = Vector2( 1920, 1080 )
+direction = Vector2( 0, 0.5 )
+gravity = Vector2( 0, 1 )
+scale_amount = 3.0
+hue_variation = 0.5
+hue_variation_random = 0.5
+
+[node name="StageStars" type="Node2D" parent="."]
+position = Vector2( 882, 380 )
+rotation = -0.0174533
+scale = Vector2( 0.602782, 0.602782 )
+
+[node name="1" type="Sprite" parent="StageStars"]
+visible = false
+position = Vector2( -2313.03, -156.959 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+offset = Vector2( 14137.5, 1024 )
+
+[node name="2" type="Sprite" parent="StageStars"]
+visible = false
+position = Vector2( -2053.05, -251.536 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+offset = Vector2( 14137.5, 1024 )
+
+[node name="3" type="Sprite" parent="StageStars"]
+visible = false
+position = Vector2( -1794.36, -147.905 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+offset = Vector2( 14137.5, 1024 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Rocket" parent="." instance=ExtResource( 1 )]
+position = Vector2( 922, 733 )
+scale = Vector2( 0.602782, 0.602782 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

@@ -6,6 +6,7 @@ onready var DefaultIMG := $"%bkgrnd"
 onready var SettingsMenu := $"../SettingsBtn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerVariables.stageStars =0
 	_create_or_load_save() #load saved game
 
 func _on_quitBtn_pressed():

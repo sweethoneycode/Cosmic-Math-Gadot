@@ -33,18 +33,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer:current_animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/keys = {
-"times": PoolRealArray( 1.9 ),
-"transitions": PoolRealArray( 1 ),
-"update": 2,
-"values": [ "new box" ]
-}
 
 [sub_resource type="Animation" id=4]
 resource_name = "explode"
@@ -191,7 +179,6 @@ __meta__ = {
 margin_left = -2.0
 margin_right = 207.0
 margin_bottom = 213.0
-rect_scale = Vector2( 1, 1e-05 )
 rect_pivot_offset = Vector2( -4, 210 )
 focus_mode = 0
 shortcut_in_tooltip = false

@@ -1,9 +1,49 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://images/Ships/Sprite-03.png" type="Texture" id=1]
 [ext_resource path="res://images/Flame.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Rocket.gd" type="Script" id=3]
 [ext_resource path="res://SFX/transport_space_shuttle_launch_from_distance_rumble.mp3" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=10]
+resource_name = "Flying"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("firePart:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("firePart:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("smoke:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "Idle"
@@ -250,14 +290,14 @@ flags = 5
 load_path = "res://.import/Smoke.png-5586a2794f1f736ff9257a0460027f8b.stex"
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 1577, 605 )
+position = Vector2( 1577, -538 )
 rotation = -0.0174533
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 root_node = NodePath("../Rocket")
 autoplay = "Idle"
-method_call_mode = 1
+anims/Flying = SubResource( 10 )
 anims/Idle = SubResource( 7 )
 "anims/New Anim" = SubResource( 3 )
 anims/RESET = SubResource( 6 )
@@ -273,6 +313,7 @@ script = ExtResource( 3 )
 
 [node name="smoke" type="CPUParticles2D" parent="Rocket"]
 position = Vector2( 48.8901, 117.963 )
+emitting = false
 amount = 5
 lifetime = 2.0
 preprocess = 10.0
@@ -287,7 +328,6 @@ scale_amount_random = 0.12
 
 [node name="firePart" type="CPUParticles2D" parent="Rocket"]
 position = Vector2( 51, 118 )
-emitting = false
 amount = 80
 lifetime = 2.0
 preprocess = 50.0
@@ -305,6 +345,7 @@ color_ramp = SubResource( 8 )
 hue_variation_random = 1.0
 
 [node name="smoke2" type="CPUParticles2D" parent="Rocket"]
+visible = false
 position = Vector2( 52.1683, 331.246 )
 emitting = false
 amount = 25
@@ -314,7 +355,7 @@ draw_order = 1
 texture = SubResource( 9 )
 emission_shape = 2
 emission_rect_extents = Vector2( 50, 1 )
-gravity = Vector2( 0, 84.1666 )
+gravity = Vector2( 0, 100 )
 angular_velocity_random = 1.0
 angle_random = 0.5
 scale_amount = 0.02

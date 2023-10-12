@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/Aliens/hula-right-foot.png" type="Texture" id=1]
 [ext_resource path="res://images/Aliens/hula-left-foot.png" type="Texture" id=2]
@@ -107,7 +107,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
-length = 5.0
+length = 3.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/body-base/body/eyes-lower/eyes-upper:position")
@@ -206,8 +206,6 @@ tracks/7/keys = {
 "values": [ 0.0, 20.9906, -2.5323 ]
 }
 
-[sub_resource type="AnimationRootNode" id=3]
-
 [node name="Hula" type="Node2D"]
 
 [node name="Hula-body" type="Polygon2D" parent="."]
@@ -277,7 +275,7 @@ __meta__ = {
 
 [node name="eyes-upper" type="Bone2D" parent="Skeleton2D/body-base/body/eyes-lower"]
 position = Vector2( -8, -109 )
-rotation = 0.0284257
+rotation = 0.0284258
 rest = Transform2D( 0.994622, 0.103575, -0.103575, 0.994622, -8, -109 )
 
 [node name="handle" type="Bone2D" parent="Skeleton2D/body-base/body/eyes-lower/eyes-upper"]
@@ -293,7 +291,7 @@ __meta__ = {
 
 [node name="right-arm-upper" type="Bone2D" parent="Skeleton2D/body-base/body/right-arm"]
 position = Vector2( 113, -2 )
-rotation = -0.0436539
+rotation = -0.0436538
 rest = Transform2D( 0.999047, -0.0436401, 0.0436401, 0.999047, 113, -2 )
 
 [node name="handle" type="Bone2D" parent="Skeleton2D/body-base/body/right-arm/right-arm-upper"]
@@ -317,9 +315,6 @@ rotation = 3.07735
 rest = Transform2D( -0.997937, 0.0641986, -0.0641986, -0.997937, -102, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 anims/RESET = SubResource( 1 )
 anims/idle = SubResource( 2 )
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 3 )
-anim_player = NodePath("../AnimationPlayer")

@@ -88,10 +88,6 @@ func disBtn():
 		
 func displayAnswers():
 		
-#		$Box1/Button.visible = false
-#		$Box2/Button.visible = false
-#		$Box3/Button.visible = false
-		
 		newBTN()
 		
 		answerbox1.text = str(answers[0])
