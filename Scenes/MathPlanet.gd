@@ -61,6 +61,7 @@ func mathPlanet():
 	planetLabel.text = mathType
 
 func _on_TextureButton_pressed():
+	SoundManager.play_se("Select")
 	PlayerVariables.stage = mathType
 	
 	get_tree().change_scene("res://Scenes/LevelSelect.tscn")

@@ -8,6 +8,9 @@ var starCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundManager.stop("Stage")
+	SoundManager.play_bgm("Space")
+	
 	_save = SaveGame.load_savegame()
 	stars = PlayerVariables.stageStars
 	Rocket.play("Flying")
@@ -15,12 +18,17 @@ func _ready():
 
 func showStars():
 	if stars > 0:
+		SoundManager.play_se("Star")
 		for star in StageStars.get_children():
 			if(int(star.name) == starCount):
 				star.show()
+				
 		if(starCount == stars):
 			$Timer2.start()
 			PlayerVariables.stageStars = 0
+	else:
+		$Timer2.start()
+		PlayerVariables.stageStars = 0
 
 func next_stage():
 	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
@@ -32,4 +40,5 @@ func _on_Timer_timeout():
 
 
 func _on_Timer2_timeout():
+	SoundManager.stop("Rocket")
 	next_stage()

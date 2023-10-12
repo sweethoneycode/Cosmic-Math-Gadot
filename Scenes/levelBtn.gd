@@ -87,5 +87,6 @@ func checkStage():
 
 
 func _on_Level_pressed():
+	SoundManager.play_se("Select")
 	PlayerVariables.levelStart = int(levelNum.text)
 	get_tree().change_scene("res://Scenes/MathStage.tscn")

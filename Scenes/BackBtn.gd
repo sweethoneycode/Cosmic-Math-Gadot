@@ -3,6 +3,7 @@ extends TextureButton
 export onready var scene
 
 func _on_BackBtn_pressed():
+	SoundManager.play_se("Back")
 	scene = PlayerVariables.currScene
 	print(scene)
 	

@@ -11,6 +11,7 @@ func _ready():
 
 func stageComplete():
 	animPlayer.play("New Anim")
+	SoundManager.play_bgs("Rocket")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

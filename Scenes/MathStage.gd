@@ -13,6 +13,10 @@ var mathType = "+"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundManager.stop("Space")
+	SoundManager.play_bgm("Stage")
+	
+	
 	PlayerVariables.currScene = "MathStage"
 	mathType = PlayerVariables.stage
 		
@@ -39,7 +43,7 @@ func _saveProgress(stagenum, stars) -> void:
 	PlayerVariables.stageStars = stars
 	match mathType:
 		"+":
-			if(stars <= 3):
+			if(stars >= _save.AdditionComplete[str(stagenum)]):
 				_save.AdditionComplete[str(stagenum)] = stars
 			if (stagenum < 20):
 				var nextstage = stagenum + 1
