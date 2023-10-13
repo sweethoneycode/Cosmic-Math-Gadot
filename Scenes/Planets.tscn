@@ -142,4 +142,4 @@ margin_bottom = 150.0
 planetImg = ExtResource( 6 )
 planetSpeed = 0
 
-[node name="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="Back" parent="." instance=ExtResource( 3 )]

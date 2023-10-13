@@ -44,7 +44,7 @@ config/icon="res://cosmic-space-graphic-google-play.png"
 PlayerVariables="*res://resources/PlayerVariables.gd"
 Signals="*res://Signals.gd"
 SoundManager="*res://addons/sound_manager/module/SoundManager.tscn"
-AudioPlayer="*res://Scenes/AudioPlayer.gd"
+BackgroundLoad="*res://background_load.tscn"
 
 [display]
 

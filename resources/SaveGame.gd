@@ -78,7 +78,7 @@ static func load_savegame() -> Resource:
 	while ResourceLoader.has_cached(tmp_file_path):
 		tmp_file_path = make_random_path()
 
-	# We write a copy of the 				print(stagenum)save game to that temporary file path.
+	# We write a copy of the save game to that temporary file path.
 	if file.open(tmp_file_path, File.WRITE) != OK:
 		printerr("Couldn't write file " + tmp_file_path)
 		return null

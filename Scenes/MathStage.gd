@@ -16,8 +16,7 @@ onready var countdownLbl := $Countdown
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SoundManager.stop("Space")
-	SoundManager.play_bgm("Stage")
+
 	Signals.connect("countdown", self, "countDown")
 	
 	PlayerVariables.currScene = "MathStage"
