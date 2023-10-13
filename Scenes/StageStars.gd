@@ -21,13 +21,16 @@ func starReward(var reward):
 			if(!star1):
 				starAnim.play("1 star")
 				star1 = true
+				SoundManager.play_bgs("Star")
 		2:	
 			if(!star2):
 				starAnim.play("2 star")
 				star2 = true
+				SoundManager.play_bgs("Star")
 		3:	
 			if(!star3):
 				starAnim.play("3 star")
 				star3 = true
+				SoundManager.play_bgs("Star")
 				
 	PlayerVariables.stageStars = reward

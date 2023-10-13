@@ -178,7 +178,7 @@ func _on_answerTimer_timeout():
 func stageStars():
 	
 	#correctAns = guesses - wrongans
-	
+	print(starCount)
 	if (correctAns >= 3):
 		starCount = 1;
 		Signals.emit_signal("starReward",1)

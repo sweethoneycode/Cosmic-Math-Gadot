@@ -34,7 +34,10 @@ _global_script_class_icons={
 
 config/name="Cosmic-Math-Gadot"
 run/main_scene="res://main.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://images/sweet-honeycode.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
+config/icon="res://cosmic-space-graphic-google-play.png"
 
 [autoload]
 

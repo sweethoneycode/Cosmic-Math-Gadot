@@ -10,13 +10,14 @@ var starCount := 0
 func _ready():
 	SoundManager.stop("Stage")
 	SoundManager.play_bgm("Space")
-	
+	stars = PlayerVariables.stageStars
+
 	_save = SaveGame.load_savegame()
 	Rocket.play("Flying")
 	$Timer.start()
 
 func showStars():
-	starCount = PlayerVariables.stageStars
+	
 	if stars > 0:
 		for star in StageStars.get_children():
 			if(int(star.name) == starCount):
