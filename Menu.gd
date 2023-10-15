@@ -1,13 +1,20 @@
 extends Control
 
 var _save: SaveGame
-
+onready var settingsMenu := $"../SettingsMenu"
+onready var mainMenu := $"%Menu"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	Signals.connect("mainMenu", self, "_mainMenu")
 	
 	SoundManager.play_bgm("Stage")
 	PlayerVariables.stageStars =0
 	_create_or_load_save() #load saved game
+
+func _mainMenu():
+	settingsMenu.hide()
+	mainMenu.show()
 
 func selectSFX():
 	SoundManager.play_se("Select")
@@ -20,7 +27,6 @@ func _on_Play_pressed():
 	selectSFX()
 	BackgroundLoad.load_scene("res://Scenes/Planets.tscn")
 
-
 func _on_PrivacyBtn_pressed():
 	selectSFX()
 # warning-ignore:return_value_discarded
@@ -28,7 +34,8 @@ func _on_PrivacyBtn_pressed():
 
 func _on_SettingsBtn_pressed():
 	selectSFX()
-	BackgroundLoad.load_scene("res://Scenes/SettingsMenu.tscn")	
+	settingsMenu.show()
+	mainMenu.hide()
 	
 func _create_or_load_save() -> void:
 	if SaveGame.save_exists():

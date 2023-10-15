@@ -88,7 +88,7 @@ default_font = SubResource( 14 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Default" type="Sprite" parent="."]
-unique_name_in_owner = true
+visible = false
 position = Vector2( 908, 366 )
 scale = Vector2( 0.699906, 0.699906 )
 texture = ExtResource( 4 )

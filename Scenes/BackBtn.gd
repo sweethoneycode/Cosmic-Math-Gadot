@@ -1,11 +1,10 @@
 extends TextureButton
 
-export onready var scene
+onready var scene
 
 func _on_BackBtn_pressed():
 	SoundManager.play_se("Back")
 	scene = PlayerVariables.currScene
-	print(scene)
 	
 	match scene:
 		
@@ -16,4 +15,4 @@ func _on_BackBtn_pressed():
 		"Planets":
 			BackgroundLoad.load_scene("res://main.tscn")
 		"Settings":
-			BackgroundLoad.load_scene("res://main.tscn")	
+			Signals.emit_signal("mainMenu")	
