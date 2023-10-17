@@ -54,19 +54,19 @@ func _saveProgress(stagenum) -> void:
 		"+":
 			if(stars >= _save.AdditionComplete[str(stagenum)]):
 				_save.AdditionComplete[str(stagenum)] = stars
-			if (stagenum < 20):
+			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.AdditionComplete[str(nextstage)] = 0
 		"-":
 			if(stars <= 3):
 				_save.SubtractionComplete[str(stagenum)] = stars
-			if (stagenum < 20):
+			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.SubtractionComplete[str(nextstage)] = 0					
 		"x":
 			if(stars <= 3):
 				_save.MultiComplete[str(stagenum)] = stars
-			if (stagenum < 20):
+			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.MultiComplete[str(nextstage)] = 0						
 		"÷":

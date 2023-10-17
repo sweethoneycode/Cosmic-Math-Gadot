@@ -33,6 +33,7 @@ func showStars():
 
 func next_stage():
 	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+	SoundManager.play_bgm("Stage")
 
 
 func _on_Timer_timeout():
