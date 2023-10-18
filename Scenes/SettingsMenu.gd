@@ -20,6 +20,7 @@ func _create_or_load_save() -> void:
 		_save = SaveGame.load_savegame()	
 	else:
 		_save = SaveGame.new()
+		
 		_save.AdditionComplete["0"] = 0
 		_save.SubtractionComplete["0"] = 0
 		_save.MultiComplete["0"] = 0
@@ -28,14 +29,27 @@ func _create_or_load_save() -> void:
 
 func _on_ClearProgress_pressed():
 	ConFirmDiag.popup_centered()
-
-func _on_ConfirmationDialog_confirmed():
+	
+func _clearSave():
+	_save.AdditionUnlock.clear()
+	_save.SubtractionUnlock.clear()
+	_save.MultiplicationUnlock.clear()
+	_save.DivisionUnlock.clear()
 	
 	_save.AdditionComplete.clear()
 	_save.SubtractionComplete.clear()
 	_save.MultiComplete.clear()
 	_save.DivisionComplete.clear()
+
+func _on_ConfirmationDialog_confirmed():
 	
+
+	_clearSave()
+	_save.AdditionUnlock["0"] = 1
+	_save.SubtractionUnlock["0"] = 1
+	_save.MultiplicationUnlock["0"] = 1
+	_save.DivisionUnlock["0"] = 1
+		
 	_save.AdditionComplete["0"] = 0
 	_save.SubtractionComplete["0"] = 0
 	_save.MultiComplete["0"] = 0

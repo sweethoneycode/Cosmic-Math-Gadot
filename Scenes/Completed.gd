@@ -8,8 +8,7 @@ var starCount := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SoundManager.stop("Stage")
-	SoundManager.play_bgm("Space")
+
 	stars = PlayerVariables.stageStars
 
 	_save = SaveGame.load_savegame()
@@ -33,7 +32,7 @@ func showStars():
 
 func next_stage():
 	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
-	SoundManager.play_bgm("Stage")
+	
 
 
 func _on_Timer_timeout():

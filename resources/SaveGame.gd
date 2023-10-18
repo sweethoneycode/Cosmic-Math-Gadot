@@ -29,6 +29,10 @@ export var version := 1
 
 export var levels: Resource
 
+export var AdditionUnlock ={"0": 1}
+export var SubtractionUnlock ={"0": 1}
+export var MultiplicationUnlock ={"0": 1}
+export var DivisionUnlock ={"0": 1}
 
 export var AdditionComplete:= {}
 export var SubtractionComplete:= {}

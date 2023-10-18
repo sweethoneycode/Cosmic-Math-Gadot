@@ -30,7 +30,7 @@ func checkStage():
 	match mathType:
 		"+":
 			if(!_save.AdditionComplete.empty()):
-				if(_save.AdditionComplete.has(currentLevel)):
+				if(_save.AdditionUnlock.get(currentLevel) == 1):
 					var stars = _save.AdditionComplete.get(currentLevel)
 					for star in $stars.get_children():
 						if(int(star.name) <= stars):

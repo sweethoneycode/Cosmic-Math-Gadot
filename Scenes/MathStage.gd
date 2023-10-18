@@ -56,28 +56,26 @@ func _saveProgress(stagenum) -> void:
 				_save.AdditionComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
-				_save.AdditionComplete[str(nextstage)] = 0
+				_save.AdditionUnlock[str(nextstage)] = 1
 		"-":
 			if(stars <= 3):
 				_save.SubtractionComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
-				_save.SubtractionComplete[str(nextstage)] = 0					
+				_save.SubtractionUnlock[str(nextstage)] = 1				
 		"x":
 			if(stars <= 3):
 				_save.MultiComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
-				_save.MultiComplete[str(nextstage)] = 0						
+				_save.MultiplicationUnlock[str(nextstage)] = 1					
 		"÷":
 			if(stars <= 3):
 				_save.DivisionComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
-				_save.DivisionComplete[str(nextstage)] = 0					
+				_save.DivisionUnlock[str(nextstage)] = 1				
 		_:
 			pass 
 	_save.write_savegame()
 	Signals.emit_signal("launch")
-
-
