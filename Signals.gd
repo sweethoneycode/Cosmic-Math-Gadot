@@ -13,3 +13,4 @@ signal countdown()
 signal starReward()
 
 signal mainMenu()
+signal planetShow()

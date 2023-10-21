@@ -212,5 +212,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[connection signal="visibility_changed" from="." to="FactorSelect" method="_on_Node2D_visibility_changed"]
 [connection signal="pressed" from="FactorSelect/LeftBtn" to="FactorSelect" method="_on_LeftBtn_pressed"]
 [connection signal="pressed" from="FactorSelect/RghtBtn" to="FactorSelect" method="_on_RghtBtn_pressed"]

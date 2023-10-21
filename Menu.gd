@@ -39,11 +39,16 @@ func _on_SettingsBtn_pressed():
 	
 func _create_or_load_save() -> void:
 	if SaveGame.save_exists():
-		_save = SaveGame.load_savegame()	
+		_save = SaveGame.load_savegame()
 	else:
 		_save = SaveGame.new()
-		_save.AdditionComplete["0"] = 0
-		_save.SubtractionComplete["0"] = 0
-		_save.MultiComplete["0"] = 0
-		_save.DivisionComplete["1"] = 0
+		_save.AdditionUnlock = {"0": 1}
+		_save.SubtractionUnlock = {"0": 1}
+		_save.MultiplicationUnlock = {"0": 1}
+		_save.DivisionUnlock = {"0": 1}
+
+		_save.AdditionComplete = {"0": 0}
+		_save.SubtractionComplete = {"0": 0}
+		_save.MultiComplete = {"0": 0}
+		_save.DivisionComplete = {"0": 0, "1": 0}
 		_save.write_savegame()

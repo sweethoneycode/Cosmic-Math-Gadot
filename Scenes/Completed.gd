@@ -1,6 +1,6 @@
 extends Node2D
 
-var _save: SaveGame
+
 onready var StageStars := $StageStars
 onready var Rocket := $Rocket/AnimationPlayer
 export var stars := 0
@@ -11,7 +11,7 @@ func _ready():
 
 	stars = PlayerVariables.stageStars
 
-	_save = SaveGame.load_savegame()
+
 	Rocket.play("Flying")
 	$Timer.start()
 
@@ -31,7 +31,7 @@ func showStars():
 		PlayerVariables.stageStars = 0
 
 func next_stage():
-	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+	BackgroundLoad.load_scene("res://Scenes/LevelSelect.tscn")
 	
 
 

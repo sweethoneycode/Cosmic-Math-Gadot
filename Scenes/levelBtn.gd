@@ -2,10 +2,6 @@ extends Button
 
 var _save: SaveGame
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var currentLevel
 var currMath
 onready var levelNum := $Label
@@ -15,17 +11,15 @@ onready var levelTXt := $"%levelTXT"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentLevel = self.name
-	_create_or_load_save() #load saved game
+	print(currentLevel)
+	_save = SaveGame.load_savegame()
+	
 	checkStage()
-
-func _create_or_load_save() -> void:
-	if SaveGame.save_exists():
-		_save = SaveGame.load_savegame()
-		
+	
 func checkStage():
 	mathType = PlayerVariables.stage
 	
-	levelNum.text = currentLevel
+	levelNum.text = str(currentLevel)
 	
 	match mathType:
 		"+":
@@ -40,7 +34,7 @@ func checkStage():
 			currMath = "addition"
 		"-":
 			if(!_save.SubtractionComplete.empty()):
-				if(_save.SubtractionComplete.has(currentLevel)):
+				if(_save.SubtractionComplete.get(currentLevel) == 1):
 					var stars = _save.SubtractionComplete.get(currentLevel)
 					for star in $stars.get_children():
 						if(int(star.name) <= stars):
@@ -50,7 +44,7 @@ func checkStage():
 			currMath = "subtraction"
 		"x":
 			if(!_save.MultiComplete.empty()):
-				if(_save.MultiComplete.has(currentLevel)):
+				if(_save.MultiplicationUnlock.get(currentLevel) == 1):
 					var stars = _save.MultiComplete.get(currentLevel)
 					for star in $stars.get_children():
 						if(int(star.name) <= stars):
@@ -60,8 +54,9 @@ func checkStage():
 			currMath = "multiplication"
 		"÷":
 			if(!_save.DivisionComplete.empty()):
-				if(_save.DivisionComplete.has(currentLevel)):
+				if(_save.DivisionUnlock.get(currentLevel) == 1):
 					var stars = _save.DivisionComplete.get(currentLevel)
+					print(stars)
 					for star in $stars.get_children():
 						if(int(star.name) <= stars):
 							star.show()
@@ -69,7 +64,7 @@ func checkStage():
 					self.disabled = true
 					
 			if(self.name == str(0)):
-				self.hide()
+				self.disabled = true
 
 			currMath = "division"
 		_:
@@ -82,8 +77,8 @@ func checkStage():
 	#load stars
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	mathType = PlayerVariables.stage
 
 
 func _on_Level_pressed():

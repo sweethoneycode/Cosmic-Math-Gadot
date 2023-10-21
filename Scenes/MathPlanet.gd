@@ -1,7 +1,5 @@
 extends Control
-
 var _save: SaveGame
-
 export(String, "+", "-", "x", "/") var mathType: = "+"
 var selectLabel
 # Declare member variables here. Examples:
@@ -12,11 +10,13 @@ onready var shipLabel := $"%ShipLabel"
 export var planetImg = preload("res://images/Planets/subtraction.png")
 export var planetSpeed := 1
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_save = SaveGame.load_savegame()
+
 	$Sprite.texture = planetImg
 	$Sprite.set_speed(planetSpeed)
+	_save = SaveGame.load_savegame()
 	mathPlanet()
 	
 
@@ -61,6 +61,6 @@ func mathPlanet():
 func _on_TextureButton_pressed():
 	SoundManager.play_se("Select")
 	PlayerVariables.stage = mathType
-	
-	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+
+	BackgroundLoad.load_scene("res://Scenes/LevelSelect.tscn")
 

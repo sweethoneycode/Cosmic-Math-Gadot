@@ -22,24 +22,19 @@ export var version := 1
 # We directly reference the characters stats and inventory in the save game resource.
 # When saving this resource, they'll get saved alongside it.
 
-
 #export var inventory: Resource = Inventory.new()
 #export var map_name := ""
 #export var global_position := Vector2.ZERO
 
-export var levels: Resource
+export var AdditionUnlock := {"0": 1}
+export var SubtractionUnlock := {"0": 1}
+export var MultiplicationUnlock := {"0": 1}
+export var DivisionUnlock := {"1": 1}
 
-export var AdditionUnlock ={"0": 1}
-export var SubtractionUnlock ={"0": 1}
-export var MultiplicationUnlock ={"0": 1}
-export var DivisionUnlock ={"0": 1}
-
-export var AdditionComplete:= {}
-export var SubtractionComplete:= {}
-export var MultiComplete:= {}
-export var DivisionComplete:= {}
-
-export var PlayerSaves := {}
+export var AdditionComplete:= {"0": 0}
+export var SubtractionComplete:= {"0": 0}
+export var MultiComplete:= {"0": 0}
+export var DivisionComplete:= {"0": 0, "1": 0}
 
 # The next three functions are just to keep the save API inside of the SaveGame resource.
 # Note that this has safety issues if players download savegame files from the 

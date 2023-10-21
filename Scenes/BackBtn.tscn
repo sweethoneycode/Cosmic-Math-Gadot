@@ -3,7 +3,7 @@
 [ext_resource path="res://images/GameUI/Back.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/BackBtn.gd" type="Script" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="Backbtn" type="Control"]
 
 [node name="BackBtn" type="TextureButton" parent="."]
 margin_left = 2.00018
