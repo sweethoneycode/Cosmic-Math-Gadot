@@ -16,7 +16,6 @@ func _ready():
 
 func _setLBL():
 	var mathT = PlayerVariables.stage
-	print(mathT)
 	match mathT:
 		"+":
 			levelTXT.text = "Addition Level"

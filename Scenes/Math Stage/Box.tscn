@@ -114,7 +114,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="StreamTexture" id=2]
-flags = 5
+flags = 4
 load_path = "res://.import/Smoke.png-5586a2794f1f736ff9257a0460027f8b.stex"
 
 [sub_resource type="DynamicFont" id=1]

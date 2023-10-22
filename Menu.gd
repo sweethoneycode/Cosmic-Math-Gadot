@@ -6,15 +6,14 @@ onready var mainMenu := $"%Menu"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	Signals.connect("mainMenu", self, "_mainMenu")
+	settingsMenu.hide()
+	mainMenu.show()
 	
 	SoundManager.play_bgm("Stage")
 	PlayerVariables.stageStars =0
 	_create_or_load_save() #load saved game
 
-func _mainMenu():
-	settingsMenu.hide()
-	mainMenu.show()
+
 
 func selectSFX():
 	SoundManager.play_se("Select")
@@ -45,7 +44,7 @@ func _create_or_load_save() -> void:
 		_save.AdditionUnlock = {"0": 1}
 		_save.SubtractionUnlock = {"0": 1}
 		_save.MultiplicationUnlock = {"0": 1}
-		_save.DivisionUnlock = {"0": 1}
+		_save.DivisionUnlock = {"0": 0, "1": 0}
 
 		_save.AdditionComplete = {"0": 0}
 		_save.SubtractionComplete = {"0": 0}

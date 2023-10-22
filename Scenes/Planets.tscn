@@ -32,33 +32,33 @@ hue_variation_random = 0.5
 unique_name_in_owner = true
 
 [node name="Addition" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 264.0
-margin_top = 245.0
-margin_right = 264.48
-margin_bottom = 245.0
+margin_left = 388.0
+margin_top = 131.0
+margin_right = 388.48
+margin_bottom = 131.0
 planetImg = ExtResource( 6 )
 
-[node name="Addition2" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 405.0
-margin_top = 732.0
-margin_right = 405.48
-margin_bottom = 732.0
+[node name="Subtraction" parent="Planets" instance=ExtResource( 4 )]
+margin_left = 1478.0
+margin_top = 121.0
+margin_right = 1478.48
+margin_bottom = 121.0
 rect_scale = Vector2( 0.823267, 0.823267 )
 mathType = "-"
 
-[node name="Addition3" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 1287.0
-margin_top = 245.0
-margin_right = 1287.48
-margin_bottom = 245.0
+[node name="Multiplication" parent="Planets" instance=ExtResource( 4 )]
+margin_left = 490.0
+margin_top = 630.0
+margin_right = 490.48
+margin_bottom = 630.0
 mathType = "x"
 planetImg = ExtResource( 9 )
 
-[node name="Addition4" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 1399.0
-margin_top = 675.0
-margin_right = 1399.48
-margin_bottom = 675.0
+[node name="Division" parent="Planets" instance=ExtResource( 4 )]
+margin_left = 1470.0
+margin_top = 623.0
+margin_right = 1470.48
+margin_bottom = 623.0
 rect_scale = Vector2( 0.841258, 0.841258 )
 mathType = "/"
 planetImg = ExtResource( 10 )

@@ -5,6 +5,7 @@ var stage := ""
 var levelStart := 0
 var stageStars := 0
 var currScene := ""
+var checkAnswer
 
 var AdditionComplete:= {}
 var SubtractionComplete:= {}
