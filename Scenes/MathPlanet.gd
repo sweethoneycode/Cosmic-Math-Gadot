@@ -1,5 +1,5 @@
 extends Control
-var _save: SaveGame
+#var _save: SaveGame
 export(String, "+", "-", "x", "/") var mathType: = "+"
 var selectLabel
 # Declare member variables here. Examples:
@@ -16,7 +16,7 @@ func _ready():
 
 	$Sprite.texture = planetImg
 	$Sprite.set_speed(planetSpeed)
-	_save = SaveGame.load_savegame()
+#	_save = SaveGame.load_savegame()
 	mathPlanet()
 	
 
@@ -24,34 +24,34 @@ func mathPlanet():
 	
 	match mathType:
 		"+":
-			if(!_save.AdditionComplete.empty()):
-				var levelStat = _save.AdditionComplete.size()
-				if(levelStat > 0):
-					levelStat -= 1
-					shipLabel.text = var2str(levelStat)
+			var levelStat = PlayerVariables.AdditionComplete.size()
+			print("Addition", levelStat)
+			if(levelStat > 0):
+				levelStat -= 1
+				shipLabel.text = var2str(levelStat)
 
 		"-":
-			if(!_save.SubtractionComplete.empty()):
-				var levelStat = _save.SubtractionComplete.size()
-				if(levelStat > 0):
-					levelStat -= 1
-					shipLabel.text = var2str(levelStat)
+			var levelStat = PlayerVariables.SubtractionComplete.size()
+			print("subtraction", levelStat)
+			if(levelStat > 0):
+				levelStat -= 1
+				shipLabel.text = var2str(levelStat)
 
 		"x":
-			if(!_save.MultiComplete.empty()):
-				var levelStat = _save.MultiComplete.size()
-				if(levelStat > 0):
-					levelStat -= 1
-					shipLabel.text = var2str(levelStat)
+			var levelStat = PlayerVariables.MultiComplete.size()
+			print("multiplication", levelStat)
+			if(levelStat > 0):
+				levelStat -= 1
+				shipLabel.text = var2str(levelStat)
 			
 		"/":
 			mathType = "÷"
-			if(!_save.DivisionComplete.empty()):
-				var levelStat = _save.DivisionComplete.size()
-				if(levelStat > 1):
-					levelStat -= 1
-					shipLabel.text = var2str(levelStat)
-				shipLabel.text = "1"
+			var levelStat = PlayerVariables.DivisionComplete.size()
+			print("division", levelStat)
+			if(levelStat > 1):
+				levelStat -= 1
+				shipLabel.text = var2str(levelStat)
+			shipLabel.text = "1"
 
 		_:
 			pass

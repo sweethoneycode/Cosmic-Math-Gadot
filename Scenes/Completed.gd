@@ -1,6 +1,5 @@
 extends Node2D
 
-
 onready var StageStars := $StageStars
 onready var Rocket := $Rocket/AnimationPlayer
 export var stars := 0
@@ -10,8 +9,6 @@ var starCount := 0
 func _ready():
 
 	stars = PlayerVariables.stageStars
-
-
 	Rocket.play("Flying")
 	$Timer.start()
 
@@ -33,15 +30,12 @@ func showStars():
 func next_stage():
 	BackgroundLoad.load_scene("res://Scenes/LevelSelect.tscn")
 	
-
-
 func _on_Timer_timeout():
 	if(starCount < stars):
 		SoundManager.play_se("Star")
 		starCount = starCount + 1
 	showStars()	
-
-
+	
 func _on_Timer2_timeout():
 	SoundManager.stop("Rocket")
 	next_stage()
