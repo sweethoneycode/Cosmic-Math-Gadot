@@ -11,7 +11,7 @@ onready var levelTXt := $"%levelTXT"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentLevel = self.name
-	print(currentLevel)
+
 	_save = SaveGame.load_savegame()
 	
 	checkStage()
@@ -77,8 +77,8 @@ func checkStage():
 	#load stars
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	mathType = PlayerVariables.stage
+#func _process(delta):
+#	mathType = PlayerVariables.stage
 
 
 func _on_Level_pressed():

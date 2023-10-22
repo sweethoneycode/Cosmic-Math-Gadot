@@ -14,8 +14,7 @@ func _ready():
 
 
 func starReward(var reward):
-	reward
-	
+
 	match reward:
 		1:
 			if(!star1):
