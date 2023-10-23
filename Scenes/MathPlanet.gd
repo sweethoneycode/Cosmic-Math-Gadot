@@ -25,21 +25,21 @@ func mathPlanet():
 	match mathType:
 		"+":
 			var levelStat = PlayerVariables.AdditionComplete.size()
-			print("Addition", levelStat)
+
 			if(levelStat > 0):
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)
 
 		"-":
 			var levelStat = PlayerVariables.SubtractionComplete.size()
-			print("subtraction", levelStat)
+
 			if(levelStat > 0):
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)
 
 		"x":
 			var levelStat = PlayerVariables.MultiComplete.size()
-			print("multiplication", levelStat)
+
 			if(levelStat > 0):
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)
@@ -47,7 +47,7 @@ func mathPlanet():
 		"/":
 			mathType = "÷"
 			var levelStat = PlayerVariables.DivisionComplete.size()
-			print("division", levelStat)
+
 			if(levelStat > 1):
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)

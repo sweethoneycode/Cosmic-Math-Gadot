@@ -277,7 +277,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="StreamTexture" id=5]
-flags = 5
+flags = 4
 load_path = "res://.import/Smoke.png-5586a2794f1f736ff9257a0460027f8b.stex"
 
 [sub_resource type="Gradient" id=8]
@@ -286,7 +286,7 @@ offsets = PoolRealArray( 0, 0.497207, 1 )
 colors = PoolColorArray( 0.992188, 0.96645, 0.333313, 1, 0.821289, 0.516013, 0.0513306, 1, 1, 1, 1, 1 )
 
 [sub_resource type="StreamTexture" id=9]
-flags = 5
+flags = 4
 load_path = "res://.import/Smoke.png-5586a2794f1f736ff9257a0460027f8b.stex"
 
 [node name="Node2D" type="Node2D"]

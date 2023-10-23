@@ -7,13 +7,11 @@ var starCount := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	stars = PlayerVariables.stageStars
 	Rocket.play("Flying")
 	$Timer.start()
 
 func showStars():
-	
 	if stars > 0:
 		for star in StageStars.get_children():
 			if(int(star.name) == starCount):
