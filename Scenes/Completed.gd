@@ -20,6 +20,7 @@ func showStars():
 		if(starCount == stars):
 			SoundManager.stop("Star")
 			$Timer2.start()
+			$Timer.stop()
 			PlayerVariables.stageStars = 0
 	else:
 		$Timer2.start()
