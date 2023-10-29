@@ -10,7 +10,7 @@ onready var shipLabel := $"%ShipLabel"
 export var planetImg = preload("res://images/Planets/subtraction.png")
 export var planetSpeed := 1
 
-
+var stats: Playerstats setget set_stats
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -19,16 +19,19 @@ func _ready():
 #	_save = SaveGame.load_savegame()
 	mathPlanet()
 	
-
+func set_stats(new_stats: Playerstats) -> void:
+	stats = new_stats
+	
 func mathPlanet():
 	
 	match mathType:
 		"+":
-			var levelStat = PlayerVariables.AdditionComplete.size()
+			var levelStat = Playerstats.AdditionComplete.size()
 
 			if(levelStat > 0):
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)
+			shipLabel.text = var2str(levelStat)
 
 		"-":
 			var levelStat = PlayerVariables.SubtractionComplete.size()
@@ -36,6 +39,7 @@ func mathPlanet():
 			if(levelStat > 0):
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)
+			shipLabel.text = var2str(levelStat)
 
 		"x":
 			var levelStat = PlayerVariables.MultiComplete.size()
@@ -43,6 +47,7 @@ func mathPlanet():
 			if(levelStat > 0):
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)
+			shipLabel.text = var2str(levelStat)
 			
 		"/":
 			mathType = "÷"
@@ -52,7 +57,6 @@ func mathPlanet():
 				levelStat -= 1
 				shipLabel.text = var2str(levelStat)
 			shipLabel.text = "1"
-
 		_:
 			pass
 

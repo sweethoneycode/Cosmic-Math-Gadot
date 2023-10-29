@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "SoundManagerModule",
 "language": "GDScript",
 "path": "res://addons/sound_manager/module/internal_scripts/SoundManager_config.gd"
+}, {
+"base": "Resource",
+"class": "StageStats",
+"language": "GDScript",
+"path": "res://resources/StageStats.gd"
 } ]
 _global_script_class_icons={
 "AnswerBox": "",
 "SaveGame": "",
-"SoundManagerModule": ""
+"SoundManagerModule": "",
+"StageStats": ""
 }
 
 [application]

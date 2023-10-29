@@ -1,21 +1,20 @@
 extends Button
 
-var _save: SaveGame
-
 var currentLevel
 var currMath
 onready var levelNum := $Label
 var mathType = "+"
 onready var levelTXt := $"%levelTXT"
 
+var stats: StageStats setget set_stats
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	currentLevel = self.name
-
-	_save = SaveGame.load_savegame()
-	
+	currentLevel = self.name	
 	checkStage()
-	
+
+func set_stats(new_stats: StageStats) -> void:
+	stats = new_stats
+
 func checkStage():
 	mathType = PlayerVariables.stage
 	
@@ -23,29 +22,29 @@ func checkStage():
 	
 	match mathType:
 		"+":
-			if(_save.AdditionUnlock.get(currentLevel) == 1):
-				var stars = _save.AdditionComplete.get(currentLevel)
+			if(PlayerVariables.AdditionUnlock.get(currentLevel) == 1):
+				var stars = PlayerVariables.AdditionComplete.get(currentLevel)
 				loadStars(stars)
 			else:
 				self.disabled = true
 			currMath = "addition"
 		"-":
-			if(_save.SubtractionComplete.get(currentLevel) == 1):
-				var stars = _save.SubtractionComplete.get(currentLevel)
+			if(PlayerVariables.SubtractionUnlock.get(currentLevel) == 1):
+				var stars = PlayerVariables.SubtractionComplete.get(currentLevel)
 				loadStars(stars)
 			else:
 				self.disabled = true
 			currMath = "subtraction"
 		"x":
-			if(_save.MultiplicationUnlock.get(currentLevel) == 1):
-				var stars = _save.MultiComplete.get(currentLevel)
+			if(PlayerVariables.MultiplicationUnlock.get(currentLevel) == 1):
+				var stars = PlayerVariables.MultiComplete.get(currentLevel)
 				loadStars(stars)
 			else:
 				self.disabled = true
 			currMath = "multiplication"
 		"÷":
-			if(_save.DivisionUnlock.get(currentLevel) == 1):
-				var stars = _save.DivisionComplete.get(currentLevel)
+			if(PlayerVariables.DivisionUnlock.get(currentLevel) == 1):
+				var stars = PlayerVariables.DivisionComplete.get(currentLevel)
 				loadStars(stars)
 			else:
 				self.disabled = true
@@ -70,4 +69,4 @@ func loadStars(stars):
 func _on_Level_pressed():
 	SoundManager.play_se("Select")
 	PlayerVariables.levelStart = int(levelNum.text)
-	get_tree().change_scene("res://Scenes/MathStage.tscn")
+	BackgroundLoad.load_scene("res://Scenes/MathStage.tscn")

@@ -39,10 +39,10 @@ margin_bottom = 131.0
 planetImg = ExtResource( 6 )
 
 [node name="Subtraction" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 1478.0
-margin_top = 121.0
-margin_right = 1478.48
-margin_bottom = 121.0
+margin_left = 1342.0
+margin_top = 140.0
+margin_right = 1342.48
+margin_bottom = 140.0
 rect_scale = Vector2( 0.823267, 0.823267 )
 mathType = "-"
 
@@ -55,10 +55,10 @@ mathType = "x"
 planetImg = ExtResource( 9 )
 
 [node name="Division" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 1470.0
-margin_top = 623.0
-margin_right = 1470.48
-margin_bottom = 623.0
+margin_left = 1334.0
+margin_top = 642.0
+margin_right = 1334.48
+margin_bottom = 642.0
 rect_scale = Vector2( 0.841258, 0.841258 )
 mathType = "/"
 planetImg = ExtResource( 10 )

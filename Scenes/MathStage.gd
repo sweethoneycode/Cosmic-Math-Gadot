@@ -52,37 +52,41 @@ func _saveProgress(stagenum) -> void:
 	var stars = PlayerVariables.stageStars
 	match mathType:
 		"+":
-			if(stars >= _save.AdditionComplete[str(stagenum)]):
+			if(stars >= 0):
 				_save.AdditionComplete[str(stagenum)] = stars
-
+				PlayerVariables.AdditionComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.AdditionUnlock[str(nextstage)] = 1
-
+				PlayerVariables.AdditionUnlock[str(nextstage)] = 1
 		"-":
-			if(stars >= _save.SubtractionComplete[str(stagenum)]):
-				_save.SubtractionComplete[str(stagenum)] = stars
 
+			if(stars >= 0):
+				_save.SubtractionComplete[str(stagenum)] = stars
+				PlayerVariables.SubtractionComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.SubtractionUnlock[str(nextstage)] = 1
-
+				PlayerVariables.SubtractionUnlock[str(nextstage)] = 1
 		"x":
-			if(stars >= _save.MultiComplete[str(stagenum)]):
-				_save.MultiComplete[str(stagenum)] = stars
 
+			if(stars >= 0):
+				_save.MultiComplete[str(stagenum)] = stars
+				PlayerVariables.multiplayer[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.MultiplicationUnlock[str(nextstage)] = 1
+				PlayerVariables.MultiplicationUnlock[str(nextstage)] = 1
 			
 		"÷":
-			if(stars <= _save.DivisionComplete[str(stagenum)]):
-				_save.DivisionComplete[str(stagenum)] = stars
 
+			if(stars >= 0):
+				_save.DivisionComplete[str(stagenum)] = stars
+				PlayerVariables.DivisionComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.DivisionUnlock[str(nextstage)] = 1
-			
+				PlayerVariables.DivisionUnlock[str(nextstage)] = 1
 		_:
 			pass 
 	_save.write_savegame()
