@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Planets.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/BackBtn.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/MathPlanet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Math Planet/MathPlanet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://images/Planets/addition.png" type="Texture" id=6]
 [ext_resource path="res://images/Planets/multiplication.png" type="Texture" id=9]
 [ext_resource path="res://images/Planets/division.png" type="Texture" id=10]
@@ -21,10 +21,10 @@ speed_scale = 0.1
 randomness = 0.5
 lifetime_randomness = 0.5
 emission_shape = 2
-emission_rect_extents = Vector2( 1920, 1080 )
+emission_rect_extents = Vector2( 1080, 720 )
 direction = Vector2( 0, 0.5 )
 gravity = Vector2( 0, 1 )
-scale_amount = 3.0
+scale_amount = 2.0
 hue_variation = 0.5
 hue_variation_random = 0.5
 
@@ -32,33 +32,33 @@ hue_variation_random = 0.5
 unique_name_in_owner = true
 
 [node name="Addition" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 388.0
-margin_top = 131.0
-margin_right = 388.48
-margin_bottom = 131.0
+margin_left = 213.0
+margin_top = 14.0
+margin_right = 213.48
+margin_bottom = 14.0
 planetImg = ExtResource( 6 )
 
 [node name="Subtraction" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 1342.0
-margin_top = 140.0
-margin_right = 1342.48
-margin_bottom = 140.0
+margin_left = 722.0
+margin_top = 7.0
+margin_right = 722.48
+margin_bottom = 7.0
 rect_scale = Vector2( 0.823267, 0.823267 )
 mathType = "-"
 
 [node name="Multiplication" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 490.0
-margin_top = 630.0
-margin_right = 490.48
-margin_bottom = 630.0
+margin_left = 114.0
+margin_top = 363.0
+margin_right = 114.48
+margin_bottom = 363.0
 mathType = "x"
 planetImg = ExtResource( 9 )
 
 [node name="Division" parent="Planets" instance=ExtResource( 4 )]
-margin_left = 1334.0
-margin_top = 642.0
-margin_right = 1334.48
-margin_bottom = 642.0
+margin_left = 877.0
+margin_top = 436.0
+margin_right = 877.48
+margin_bottom = 436.0
 rect_scale = Vector2( 0.841258, 0.841258 )
 mathType = "/"
 planetImg = ExtResource( 10 )

@@ -36,6 +36,8 @@ export var SubtractionComplete:= {"0": 0}
 export var MultiComplete:= {"0": 0}
 export var DivisionComplete:= {"0": 0, "1": 0}
 
+export var lvlsUnlocked := false
+
 # The next three functions are just to keep the save API inside of the SaveGame resource.
 # Note that this has safety issues if players download savegame files from the 
 # web. Please see the README and check out the deciated video.

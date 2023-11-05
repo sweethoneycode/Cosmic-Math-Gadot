@@ -308,7 +308,7 @@ stream = ExtResource( 4 )
 volume_db = -0.00500122
 
 [node name="Rocket" type="Node2D" parent="."]
-position = Vector2( -41, 3 )
+position = Vector2( -1563.31, -626.379 )
 script = ExtResource( 3 )
 
 [node name="smoke" type="CPUParticles2D" parent="Rocket"]
