@@ -6,7 +6,7 @@
 [ext_resource path="res://SFX/Incorrect.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=2]
-size = 100
+size = 80
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -19,10 +19,10 @@ script = ExtResource( 1 )
 
 [node name="Num1" type="Label" parent="."]
 unique_name_in_owner = true
-margin_left = 523.0
-margin_top = 247.0
-margin_right = 637.0
-margin_bottom = 365.0
+margin_left = 55.0
+margin_top = 36.0
+margin_right = 169.0
+margin_bottom = 154.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
@@ -32,10 +32,10 @@ align = 1
 
 [node name="Symbol" type="Label" parent="."]
 unique_name_in_owner = true
-margin_left = 685.0
-margin_top = 247.0
-margin_right = 877.0
-margin_bottom = 445.0
+margin_left = 169.0
+margin_top = 37.0
+margin_right = 282.0
+margin_bottom = 132.0
 rect_rotation = 0.55862
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
@@ -49,10 +49,10 @@ __meta__ = {
 
 [node name="Num2" type="Label" parent="."]
 unique_name_in_owner = true
-margin_left = 922.0
-margin_top = 247.0
-margin_right = 1114.0
-margin_bottom = 445.0
+margin_left = 268.0
+margin_top = 37.0
+margin_right = 388.0
+margin_bottom = 141.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 2
@@ -61,11 +61,10 @@ text = "00"
 align = 1
 
 [node name="EqualsSymb" type="Label" parent="."]
-margin_left = 1075.0
-margin_top = 247.0
-margin_right = 1267.0
-margin_bottom = 445.0
-rect_rotation = 0.55862
+margin_left = 388.0
+margin_top = 36.0
+margin_right = 496.0
+margin_bottom = 131.0
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
@@ -80,10 +79,10 @@ __meta__ = {
 [node name="AnswerNum" type="Label" parent="."]
 unique_name_in_owner = true
 visible = false
-margin_left = 1216.0
-margin_top = 247.0
-margin_right = 1408.0
-margin_bottom = 445.0
+margin_left = 496.0
+margin_top = 36.0
+margin_right = 663.0
+margin_bottom = 152.0
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3

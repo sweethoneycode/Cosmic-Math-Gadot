@@ -15,6 +15,7 @@ font_data = ExtResource( 2 )
 [node name="0" type="Button"]
 margin_right = 212.0
 margin_bottom = 206.0
+rect_scale = Vector2( 0.5, 0.5 )
 focus_mode = 0
 action_mode = 0
 enabled_focus_mode = 0

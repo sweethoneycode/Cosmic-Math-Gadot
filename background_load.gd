@@ -7,8 +7,6 @@ var thread = null
 
 onready var progress = $Progress
 onready var space := $space
-onready var Rocket := $Rocket
-onready var RocketAnim := $Rocket/AnimationPlayer
 
 func _thread_load(path):
 	var ril = ResourceLoader.load_interactive(path)

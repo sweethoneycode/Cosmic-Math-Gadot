@@ -114,7 +114,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="StreamTexture" id=2]
-flags = 5
+flags = 4
 load_path = "res://.import/Smoke.png-5586a2794f1f736ff9257a0460027f8b.stex"
 
 [sub_resource type="DynamicFont" id=1]
@@ -158,7 +158,6 @@ margin_bottom = 213.0
 rect_scale = Vector2( 1, 1e-05 )
 rect_pivot_offset = Vector2( -4, 210 )
 focus_mode = 0
-disabled = true
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true

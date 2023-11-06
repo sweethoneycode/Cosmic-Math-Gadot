@@ -1,0 +1,33 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/SaveGame.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+version = 1
+AdditionUnlock = {
+"0": 1
+}
+SubtractionUnlock = {
+"0": 1
+}
+MultiplicationUnlock = {
+"0": 1
+}
+DivisionUnlock = {
+"0": 1,
+"1": 1
+}
+AdditionComplete = {
+"0": 0
+}
+SubtractionComplete = {
+"0": 0
+}
+MultiComplete = {
+"0": 0
+}
+DivisionComplete = {
+"0": 0,
+"1": 0
+}

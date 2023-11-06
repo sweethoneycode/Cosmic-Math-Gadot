@@ -55,6 +55,8 @@ offset = Vector2( 14137.5, 1024 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [node name="Rocket" parent="." instance=ExtResource( 1 )]
 position = Vector2( 922, 733 )

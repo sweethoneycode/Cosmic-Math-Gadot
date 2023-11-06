@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://Font/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://images/GameUI/grey_box.png" type="Texture" id=2]
+[ext_resource path="res://images/GameUI/blue_boxCheckmark.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[resource]
+CheckBox/fonts/font = SubResource( 10 )
+CheckBox/icons/checked = ExtResource( 3 )
+CheckBox/icons/unchecked = ExtResource( 2 )
+CheckButton/icons/off = ExtResource( 2 )
+CheckButton/icons/on = ExtResource( 3 )
