@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/BackBtn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Math Planet/MathPlanet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://images/Planets/addition.png" type="Texture" id=6]
-[ext_resource path="res://images/Planets/multiplication.png" type="Texture" id=9]
+[ext_resource path="res://images/Planets/Multiplication.png" type="Texture" id=9]
 [ext_resource path="res://images/Planets/division.png" type="Texture" id=10]
 
 [node name="Planets" type="Node2D"]

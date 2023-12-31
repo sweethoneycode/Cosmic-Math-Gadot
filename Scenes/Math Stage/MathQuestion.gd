@@ -91,7 +91,7 @@ func setSecondNum():
 	#addend2Txt.text = str(Addend2[0])
 	Addend2num = Addend2[0]
 	
-	
+	print(Addend2)
 	set_Question()
 	get_answer(Addend2num)
 

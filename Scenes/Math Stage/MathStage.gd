@@ -8,7 +8,7 @@ var mathType = "+"
 
 onready var additionIMG := $"%Additionbckgrnd"
 onready var subtrationIMG := preload("res://images/Planets/Subtraction_Planet.png")
-onready var MultiplicationIMG := preload("res://images/Planets/Multiplication.png")
+onready var MultiplicationIMG := preload("res://images/Planets/Multiplication_planet.png")
 onready var DivisionIMG := preload("res://images/Planets/Division_planet_2.png")
 
 onready var rocketAnim := $Rocket/AnimationPlayer
@@ -72,7 +72,7 @@ func _saveProgress(stagenum) -> void:
 
 			if(stars >= 0):
 				_save.MultiComplete[str(stagenum)] = stars
-				PlayerVariables.multiplayer[str(stagenum)] = stars
+				PlayerVariables.MultiComplete[str(stagenum)] = stars
 			if (stagenum < 21):
 				var nextstage = stagenum + 1
 				_save.MultiplicationUnlock[str(nextstage)] = 1
