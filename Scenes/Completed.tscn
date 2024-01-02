@@ -27,9 +27,9 @@ hue_variation = 0.5
 hue_variation_random = 0.5
 
 [node name="StageStars" type="Node2D" parent="."]
-position = Vector2( 882, 380 )
+position = Vector2( 599, 184 )
 rotation = -0.0174533
-scale = Vector2( 0.602782, 0.602782 )
+scale = Vector2( 0.407442, 0.407442 )
 
 [node name="1" type="Sprite" parent="StageStars"]
 visible = false
@@ -59,8 +59,8 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Rocket" parent="." instance=ExtResource( 1 )]
-position = Vector2( 922, 733 )
-scale = Vector2( 0.602782, 0.602782 )
+position = Vector2( 1323, 733 )
+scale = Vector2( 0.460797, 0.460797 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

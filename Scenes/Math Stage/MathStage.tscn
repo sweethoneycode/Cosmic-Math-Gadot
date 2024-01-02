@@ -73,8 +73,8 @@ __meta__ = {
 }
 
 [node name="Rocket" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2168, 861 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 2185, 863 )
+scale = Vector2( 0.711939, 0.711939 )
 
 [node name="Countdown" type="Label" parent="."]
 margin_left = 1044.0

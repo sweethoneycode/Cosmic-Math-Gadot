@@ -49,19 +49,19 @@ tracks/2/keys = {
 resource_name = "Idle"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("smoke:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("smoke:emitting")
+tracks/1/path = NodePath("smoke:scale_amount")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -69,11 +69,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("smoke:scale_amount")
+tracks/2/path = NodePath("firePart:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -81,28 +81,16 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("firePart:emitting")
+tracks/3/path = NodePath("smoke2:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("smoke2:emitting")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -292,11 +280,13 @@ load_path = "res://.import/Smoke.png-5586a2794f1f736ff9257a0460027f8b.stex"
 [node name="Node2D" type="Node2D"]
 position = Vector2( 1577, 605 )
 rotation = -0.0174533
+scale = Vector2( 1, 0.81 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 root_node = NodePath("../Rocket")
 autoplay = "Idle"
+reset_on_save = false
 anims/Flying = SubResource( 10 )
 anims/Idle = SubResource( 7 )
 "anims/New Anim" = SubResource( 3 )
@@ -345,7 +335,6 @@ color_ramp = SubResource( 8 )
 hue_variation_random = 1.0
 
 [node name="smoke2" type="CPUParticles2D" parent="Rocket"]
-visible = false
 position = Vector2( 52.1683, 331.246 )
 emitting = false
 amount = 25
@@ -355,7 +344,7 @@ draw_order = 1
 texture = SubResource( 9 )
 emission_shape = 2
 emission_rect_extents = Vector2( 50, 1 )
-gravity = Vector2( 0, 100 )
+gravity = Vector2( 0, 0 )
 angular_velocity_random = 1.0
 angle_random = 0.5
 scale_amount = 0.02
