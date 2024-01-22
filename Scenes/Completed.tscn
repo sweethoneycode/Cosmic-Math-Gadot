@@ -59,7 +59,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Rocket" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1323, 733 )
+position = Vector2( 322, 366 )
 scale = Vector2( 0.460797, 0.460797 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
