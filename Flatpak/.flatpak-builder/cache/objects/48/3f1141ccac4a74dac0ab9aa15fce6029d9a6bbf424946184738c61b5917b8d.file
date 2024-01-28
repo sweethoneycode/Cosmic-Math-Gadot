@@ -1,0 +1,8 @@
+[Application]
+name=io.github.sweethoneycode.cosmic_math
+runtime=org.freedesktop.Platform/x86_64/23.08
+sdk=org.freedesktop.Sdk/x86_64/23.08
+command=cosmic-math.x86_64
+
+[Context]
+sockets=x11;pulseaudio;

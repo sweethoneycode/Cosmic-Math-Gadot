@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Cosmic Math
+Comment=https://sweethoneycode.com/
+Categories=Game;KidsGame;
+
+Icon=io.github.sweethoneycode.cosmic_math
+Exec=cosmic-math.x86_64
+Terminal=false

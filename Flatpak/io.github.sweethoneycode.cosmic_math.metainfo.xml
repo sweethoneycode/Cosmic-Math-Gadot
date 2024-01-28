@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sweethoneycode.cosmic_math</id>
+  
+  <name>Cosmic Math</name>
+  <summary>https://sweethoneycode.com/</summary>
+  
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>CC-BY-4.0</project_license>
+  
+  <description>
+    <p>
+      Math Learning activities for kids passing preschool (Age 4-8 years). To teach math concepts like numbers, addition, and subtraction.
+    </p>
+    <p>
+      <em>
+      </em> Features 1. Colorful games to teach kids learning basics 2. Frequent repetition to help children learn 3. Easy to use. Kid friendly interface 5. Free play
+    </p>
+    <p>
+      <em>
+      </em> Games are designed to enhance following skills 1. Basic mathematics
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.github.sweethoneycode.cosmic_math.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/sweethoneycode/Cosmic-Math-Gadot/blob/9812861cfefcf63bf6b77e29b18657ebce2267f9/screenshots/menu.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/sweethoneycode/Cosmic-Math-Gadot/blob/9812861cfefcf63bf6b77e29b18657ebce2267f9/screenshots/addition-planet.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/sweethoneycode/Cosmic-Math-Gadot/blob/9812861cfefcf63bf6b77e29b18657ebce2267f9/screenshots/planet-select.png</image>
+    </screenshot>
+  </screenshots>
+</component>
