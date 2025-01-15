@@ -27,7 +27,7 @@ func showStars():
 		PlayerVariables.stageStars = 0
 
 func next_stage():
-	BackgroundLoad.load_scene("res://Scenes/LevelSelect.tscn")
+	get_tree().change_scene("res://Scenes/LevelSelect.tscn")
 	
 func _on_Timer_timeout():
 	if(starCount < stars):

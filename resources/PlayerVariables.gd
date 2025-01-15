@@ -19,3 +19,4 @@ var MultiplicationUnlock := {"0": 1}
 var DivisionUnlock := {"0": 1}
 
 var lvlsUnlocked := false
+var musicMute := false

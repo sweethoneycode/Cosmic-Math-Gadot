@@ -3,7 +3,7 @@ extends Control
 var _save: SaveGame
 
 onready var ConFirmDiag := $"%ConfirmationDialog"
-onready var checkbtn := $"%CheckButton"
+onready var checkbtn := $"%Levels Unlocked"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 

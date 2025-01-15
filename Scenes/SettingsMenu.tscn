@@ -201,7 +201,7 @@ theme = SubResource( 15 )
 dialog_text = "You Are About to Lose All your Progress!"
 dialog_hide_on_ok = false
 
-[node name="CheckButton" type="CheckButton" parent="SettingsMenu"]
+[node name="Levels Unlocked" type="CheckButton" parent="SettingsMenu"]
 unique_name_in_owner = true
 margin_left = -374.0
 margin_top = 77.0
@@ -218,4 +218,4 @@ text = "All Levels Unlocked"
 [connection signal="pressed" from="SettingsMenu/PrivacyBtn" to="SettingsMenu" method="_on_PrivacyBtn_pressed"]
 [connection signal="pressed" from="SettingsMenu/ClearProgress" to="SettingsMenu" method="_on_ClearProgress_pressed"]
 [connection signal="confirmed" from="SettingsMenu/ConfirmationDialog" to="SettingsMenu" method="_on_ConfirmationDialog_confirmed"]
-[connection signal="pressed" from="SettingsMenu/CheckButton" to="SettingsMenu" method="_on_CheckButton_pressed"]
+[connection signal="pressed" from="SettingsMenu/Levels Unlocked" to="SettingsMenu" method="_on_CheckButton_pressed"]

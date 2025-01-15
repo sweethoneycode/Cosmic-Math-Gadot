@@ -2,7 +2,7 @@ extends Node2D
 class_name AnswerBox
 
 var answers = []
-var correctAnswer
+var corrAnswer
 
 var number
 var random = RandomNumberGenerator.new()
@@ -30,15 +30,15 @@ func _ready():
 func _incorrect():
 	disBtn()
 	SoundManager.play_se("Incorrect")
-	if(answerbox1.text != str(correctAnswer)):
+	if(answerbox1.text != str(corrAnswer)):
 	#	answerbo1Part.emitting = true
 		answer1Anim.play("explode")
 		
-	if(answerbox2.text != str(correctAnswer)):
+	if(answerbox2.text != str(corrAnswer)):
 		#answerbo2Part.emitting = true
 		answer2Anim.play("explode")
 		
-	if(answerbox3.text != str(correctAnswer)):
+	if(answerbox3.text != str(corrAnswer)):
 		#answerbo3Part.emitting = true
 		answer3Anim.play("explode")
 		
@@ -72,7 +72,7 @@ func _get_answers(answer:int):
 	
 	for _i in range(2):
 		number = answer
-		correctAnswer = answer
+		corrAnswer = answer
 		while answers.has(number):
 			number = random.randi_range(2, 19)
 		answers.append(number)
